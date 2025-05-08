@@ -7,7 +7,6 @@ const fetch = require('node-fetch');
 require('dotenv').config();
 const mysql = require('mysql2');
 const multer = require("multer");
-const puppeteer = require("puppeteer");
 const { profile } = require("console");
 const PDFParser = require("pdf2json");
 const mammoth = require('mammoth');
