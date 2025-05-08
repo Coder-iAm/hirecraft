@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Template</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            font-size: 20px;
+            height: auto; /* Increased height for better template fit */
+            padding: 16px;
+        }
+        .container {
+            width: 97vw;
+            min-height: 120vh;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar {
+            width: 100%;
+            background: #ffffff;
+            padding: 20px;
+            text-align: start;
+            box-sizing: border-box;
+        }
+        .profile{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            
+        }
+        .profile img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            color: #001eb3;
+            font-weight: bold;
+            margin-top: 20px;
+            text-transform: uppercase;
+
+        }
+        .content {
+            width: 100%;
+            padding: 20px;
+        }
+        p, h1 {
+            padding: 12px; /* Added padding */
+        }
+        .skills div {
+            margin: 10px 0;
+        }
+        .skill-bar {
+            height: 8px;
+            background: #0056b3;
+            border-radius: 5px;
+        }
+        .bar-container {
+            width: 70%;
+            background: #ddd;
+            border-radius: 5px;
+            height: 8px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile">
+                <div class="namecontact"><h1>{{name}}</h1>
+            
+                    <div class="contact"><p>PHONE: {{phone}}</p>
+                    <p>EMAIL: {{email}}</p></div></div>
+                <div class="pic">
+                <img src="uploads/profile.jpg" alt="Profile Image">
+            </div>
+            
+            </div>
+            <hr class="hrline">
+            <div class="section-title">CARRIER OBJECTIVE</div>
+            <p>{{profile}}</p>
+            <hr class="hrline">
+           
+            <hr class="hrline">
+            <div class="section-title">PERSONAL INFORMATION</div>
+            <p><strong>DATE OF BIRTH:</strong> {{date-of-birth}}</p>
+            <p><strong>ADDRESS:</strong> {{address}}</p>
+            <p><strong>LANGUAGES:</strong> {{languages}}</p>
+            <hr class="hrline">
+            <div class="section-title">INTEREST</div>
+            <p>{{hobbies}}</p>
+            <hr class="hrline">
+        </div>
+        <div class="content">
+            
+            <div class="section-title">EDUCATION</div>
+            {{education}}
+            <hr class="hrline">
+            <div class="section-title">WORK EXPERIENCE</div>
+            {{experience}}
+            <hr class="hrline">
+            <div class="section-title">ACADEMIC PROJECTS</div>
+            {{academic-projects}}
+            <hr class="hrline">
+            <div class="section-title">CERTIFICATIONS</div>
+            {{achievements}}
+            <hr class="hrline">
+            <div class="section-title">TECHNICAL SKILLS</div>
+            <div class="skills">
+               {{skills}}
+               <hr class="hrline">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

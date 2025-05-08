@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Template</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            padding: 30px;
+        }
+        p{
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+       
+        .resume-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+        }
+        
+        .profile-section {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 25px;
+            text-align: center;
+        }
+        
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 25px;
+            border: 3px solid rgba(255,255,255,0.2);
+        }
+        
+        .main-content {
+            padding: 40px;
+            display: grid;
+            grid-template-rows: auto 1fr;
+        }
+        
+        .header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .timeline-column {
+            position: relative;
+        }
+        
+        .timeline-column:not(:last-child):after {
+            content: "";
+            position: absolute;
+            right: -15px;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: #eee;
+        }
+        
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+            margin-top: 9px;
+          
+        }
+        
+        .section-title:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: #3498db;
+        }
+        
+        .timeline-item {
+            margin-bottom: 30px;
+            padding-left: 20px;
+            border-left: 2px solid #3498db;
+            position: relative;
+        }
+        
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            left: -7px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #3498db;
+        }
+        
+        .skill-item {
+            margin-bottom: 15px;
+        }
+        
+        .skill-name {
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .skill-bar {
+            height: 6px;
+            background: #eee;
+            border-radius: 3px;
+            overflow: hidden;
+            margin: 4px;
+        }
+        
+        .skill-level {
+            height: 100%;
+            background: #3498db;
+        }
+        
+        .contact-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-icon {
+            margin-right: 10px;
+            color: #3498db;
+        }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile">
+                <div class="namecontact">
+                    <h1>{{name}}</h1>
+                    <div class="contact">
+                        <p>PHONE: {{phone}}</p>
+                        <p>EMAIL: {{email}}</p>
+                    </div>
+                </div>
+                <div class="pic">
+                    <img src="uploads/profile.jpg" alt="Profile Image">
+                </div>
+            </div>
+            <hr class="hrline">
+            <div class="section-title">CAREER OBJECTIVE</div>
+            <p>{{profile}}</p>
+            <hr class="hrline">
+            <div class="section-title">PERSONAL INFORMATION</div>
+            <p><strong>DATE OF BIRTH:</strong> {{date-of-birth}}</p>
+            <p><strong>ADDRESS:</strong> {{address}}</p>
+            <p><strong>LANGUAGES:</strong> {{languages}}</p>
+            <hr class="hrline">
+            <div class="section-title">INTEREST</div>
+            <p>{{hobbies}}</p>
+            <hr class="hrline">
+        </div>
+        <div class="content">
+            <div class="section-title">EDUCATION</div>
+            {{education}}
+            <hr class="hrline">
+            <div class="section-title">WORK EXPERIENCE</div>
+            {{experience}}
+            <hr class="hrline">
+            <div class="section-title">ACADEMIC PROJECTS</div>
+            {{academic-projects}}
+            <hr class="hrline">
+            <div class="section-title">CERTIFICATIONS</div>
+            {{achievements}}
+            <hr class="hrline">
+            <div class="section-title">TECHNICAL SKILLS</div>
+            <div class="skills">
+                {{skills}}
+            </div>
+            <hr class="hrline">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Template</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            padding: 30px;
+        }
+        
+        .resume-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-card {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .card {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 10px;
+        }
+        
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 5px solid #f5f7fa;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 50px;
+            height: 2px;
+            background: #9b59b6;
+        }
+        
+        .experience-card .section-title:after {
+            background: #3498db;
+        }
+        
+        .education-card .section-title:after {
+            background: #2ecc71;
+        }
+        
+        .skills-card .section-title:after {
+            background: #e74c3c;
+        }
+        
+        .timeline-item {
+            margin-bottom: 25px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #9b59b6;
+        }
+        
+        .experience-card .timeline-item:before {
+            background: #3498db;
+        }
+        
+        .education-card .timeline-item:before {
+            background: #2ecc71;
+        }
+        
+        .skill-category {
+            margin-bottom: 20px;
+        }
+        
+        .skill-name {
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .progress-container {
+            height: 6px;
+            background: #f0f0f0;
+            border-radius: 3px;
+            margin-bottom: 15px;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            border-radius: 3px;
+            background: #9b59b6;
+        }
+        
+        .skills-card .progress-bar {
+            background: #e74c3c;
+        }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile">
+                <div class="namecontact">
+                    <h1>{{name}}</h1>
+                    <div class="contact">
+                        <p>PHONE: {{phone}}</p>
+                        <p>EMAIL: {{email}}</p>
+                    </div>
+                </div>
+                <div class="pic">
+                    <img src="uploads/profile.jpg" alt="Profile Image">
+                </div>
+            </div>
+            <hr class="hrline">
+            <div class="section-title">CAREER OBJECTIVE</div>
+            <p>{{profile}}</p>
+            <hr class="hrline">
+            <div class="section-title">PERSONAL INFORMATION</div>
+            <p><strong>DATE OF BIRTH:</strong> {{date-of-birth}}</p>
+            <p><strong>ADDRESS:</strong> {{address}}</p>
+            <p><strong>LANGUAGES:</strong> {{languages}}</p>
+            <hr class="hrline">
+            <div class="section-title">INTEREST</div>
+            <p>{{hobbies}}</p>
+            <hr class="hrline">
+        </div>
+        <div class="content">
+            <div class="section-title">EDUCATION</div>
+            {{education}}
+            <hr class="hrline">
+            <div class="section-title">WORK EXPERIENCE</div>
+            {{experience}}
+            <hr class="hrline">
+            <div class="section-title">ACADEMIC PROJECTS</div>
+            {{academic-projects}}
+            <hr class="hrline">
+            <div class="section-title">CERTIFICATIONS</div>
+            {{achievements}}
+            <hr class="hrline">
+            <div class="section-title">TECHNICAL SKILLS</div>
+            <div class="skills">
+                {{skills}}
+            </div>
+            <hr class="hrline">
+        </div>
+    </div>
+</body>
+</html>

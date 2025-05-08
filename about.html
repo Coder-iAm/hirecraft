@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hirecraft About</title>
+    <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+
+            /* Ensure full height */
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+        }
+
+        /* Stylish Webkit scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+            /* Width of the scrollbar */
+            height: 10px;
+            /* Height of the scrollbar for horizontal scrolling */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #007bff;
+            /* Color of the scrollbar thumb */
+            border-radius: 10px;
+            /* Rounded corners for the scrollbar thumb */
+            border: 3px solid #f9f9f9;
+            /* Border around the scrollbar thumb */
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+            /* Background color of the track */
+            border-radius: 10px;
+            /* Rounded corners for the track */
+        }
+
+        ::-webkit-scrollbar-button {
+            display: none;
+            /* Hide the buttons (up/down or left/right) on the scrollbar */
+        }
+
+        ::-webkit-scrollbar-corner {
+            background-color: #f9f9f9;
+
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+        }
+
+
+
+        .mainLogo1 img {
+            border-radius: 12px;
+            padding-top: 12px;
+            height: 25px;
+        }
+
+        .mainLogo img {
+            border-radius: 12px;
+            padding-top: 12px;
+            height: 25px;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar a {
+            padding: 9px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            border: 1px solid rgba(255, 0, 0, 0);
+            border-radius: 12px;
+        }
+
+        .navbar a:hover {
+            background-color: #d4d4d47b;
+        }
+
+        .navbar2 {
+            height: 170px;
+            display: none;
+            flex-direction: column;
+
+            position: absolute;
+            top: 120px;
+
+            width: 190px;
+            border: 2px solid rgba(224, 223, 223, 0.356);
+            border-radius: 12px;
+            justify-content: center;
+            align-items: flex-start;
+            background-color: white;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            transition: 0.3s ease;
+        }
+
+        .navbar2 a {
+            padding: 9px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            border: 1px solid rgba(255, 0, 0, 0);
+            border-radius: 12px;
+        }
+
+        .navbar2 a:hover {
+            background-color: #d4d4d47b;
+        }
+
+        .menuIcon {
+            display: none;
+            background-color: white;
+            border: none;
+        }
+
+        .auth-options {
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-content {
+            text-align: center;
+            margin: 40px 20px;
+        }
+
+        .header-content h1 {
+            font-size: 32px;
+            margin: 0;
+        }
+
+        .header-content p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .option {
+            border: none;
+            background: #ffffff;
+            color: #007bff;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .button,
+        .profile,
+        .google {
+            padding: 12px 25px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.2s ease-in-out;
+
+        }
+
+        .button {
+            color: #ffffff;
+            background: linear-gradient(to right, rgb(29, 142, 235), rgb(11, 11, 161));
+            border: none;
+            text-decoration: none;
+        }
+
+        .button:hover,
+        .profile:hover,
+        .google:hover {
+            transform: translateY(3px);
+        }
+
+        .profile {
+            background-color: rgba(197, 197, 197, 0.119);
+            color: rgb(27, 27, 27);
+            border: none;
+            border: 2px solid rgb(81, 81, 81);
+        }
+
+        .profile:hover {
+            background-color: #4248bc;
+            color: #ffffff;
+        }
+
+        .google {
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+
+        .google:hover {
+            background-color: #0056b3;
+        }
+
+        .Main-body {
+            height: auto;
+
+        }
+
+        .footer {
+            background-color: white;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            text-align: center;
+            color: #333;
+
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+
+            gap: 60px;
+        }
+
+        .footer-column h4 {
+            font-weight: bold;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #007bff;
+            display: block;
+            margin: 12px 0;
+        }
+
+        .footer a:hover {
+            color: #0056b3;
+        }
+
+        .followus {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .followus a {
+            display: flex;
+            align-items: center;
+            width: 30px;
+            justify-content: center;
+            border: 1px solid rgba(255, 0, 0, 0);
+            border-radius: 12px;
+        }
+
+        .followus a:hover {
+            background-color: #908d8d78;
+        }
+
+        @media (max-width: 430px) {
+            .header {
+
+                align-items: center;
+                padding: 10px;
+            }
+
+            .navbar {
+                align-items: center;
+                gap: 10px;
+            }
+
+            .header-content h1 {
+                font-size: 18px;
+            }
+
+            .header-content p {
+                font-size: 14px;
+            }
+
+            .button,
+            .profile,
+            .google {
+                font-size: 13px;
+                padding: 9px 18px;
+            }
+
+            .footer {
+                flex-direction: column;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .header-content h1 {
+                font-size: 16px;
+            }
+
+            .header-content p {
+                font-size: 13px;
+            }
+
+            .button,
+            .profile,
+            .google {
+                font-size: 12px;
+                padding: 7px 14px;
+            }
+        }
+
+        @media (min-width: 1366px) and (max-width: 1920px) {
+            .header {
+                padding: 25px;
+            }
+
+            .header-content h1 {
+                font-size: 40px;
+            }
+
+            .header-content p {
+                font-size: 22px;
+            }
+
+            .button,
+            .profile,
+            .google {
+                font-size: 18px;
+                padding: 15px 30px;
+            }
+        }
+
+        @media (max-width: 967px) {
+            .navbar {
+                display: none;
+            }
+
+            .menuIcon {
+                display: block;
+            }
+
+            .footer-links {
+                flex-direction: column;
+            }
+
+            .footer-links {
+                gap: 30px;
+            }
+
+            .mainLogo1 img {
+                border-radius: 12px;
+                padding-top: 12px;
+                height: 18px;
+            }
+
+            .mainLogo img {
+                border-radius: 12px;
+                padding-top: 12px;
+                height: 18px;
+            }
+
+        }
+
+
+
+        /*div profile*/
+        .profile-menu {
+            margin: 0;
+            position: absolute;
+            top: 50px;
+            right: 12px;
+            background: white;
+            width: 260px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 15px;
+            display: none;
+            z-index: 10;
+            transition: all 0.3s ease-in-out;
+            box-sizing: border-box;
+        }
+
+        .profile-menu.active {
+            display: block;
+        }
+
+        .profile-menu h4 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #222;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .profile-menu p {
+            font-size: 14px;
+            color: #444;
+            margin-top: 8px;
+            padding: 5px 10px;
+            background: #f5f5f5;
+            border-radius: 5px;
+            word-wrap: break-word;
+            /* Break long words */
+            overflow-wrap: break-word;
+            white-space: normal;
+            /* Allows text to wrap */
+            max-width: 100%;
+        }
+
+        .profile-menu p strong {
+            color: #0073e6;
+        }
+
+        .logout-btn {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            background: red;
+            color: white;
+            border-radius: 6px;
+            margin-top: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .logout-btn:hover {
+            background: darkred;
+        }
+
+        /* 🔹 Responsive Design */
+        @media (max-width: 600px) {
+            .profile-menu {
+                width: 220px;
+
+            }
+
+            .profile-menu h4 {
+                font-size: 16px;
+            }
+
+            .profile-menu p {
+                font-size: 13px;
+            }
+        }
+
+        .profile2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .profile2 img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+        }
+
+        @media (max-width: 768px) {
+
+            .profile2 img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+
+        /*animation profiles*/
+
+        .second-body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #23253300;
+            overflow-x: hidden;
+            height: 100vh;
+            font-family: sans-serif;
+        }
+
+
+
+        a {
+            text-decoration: none;
+
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            max-width: 600px;
+            max-height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+            flex-direction: column;
+            margin-bottom: 100px;
+        }
+
+        .cards {
+
+            position: relative;
+            height: 500px;
+            width: 430px;
+            margin-bottom: 20px;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        .cards label {
+            position: absolute;
+            width: 430px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            cursor: pointer;
+            transition: transform 0.55s ease;
+        }
+
+        .cards .card {
+            position: relative;
+            height: 100%;
+            background-color: #323444;
+            border-radius: 10px;
+            padding: 20px 25px;
+        }
+
+        .cards .image {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .cards .image img {
+            border-radius: 5px;
+            box-shadow: 15px 15px 40px rgba(0, 0, 0, 50%);
+            margin-top: 23px;
+            width: 80%;
+            height: 220px;
+            object-fit: cover;
+            transition: all .7s;
+
+
+        }
+
+        .cards .image img:hover {
+            transform: scale(1.05);
+        }
+
+
+        .cards .image .dots {
+            text-align: center;
+        }
+
+        .dots div {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            margin-left: 6px;
+        }
+
+        .dots div:nth-child(1) {
+            background-color: var(--current-color1);
+        }
+
+        .dots div:nth-child(2) {
+            background-color: #5b85f9;
+        }
+
+
+        .dots div:nth-child(3) {
+            background-color: #000;
+        }
+
+        .card .infos {
+            display: block;
+            text-align: end;
+            padding-top: 60px;
+        }
+
+        .card .infos span {
+            display: block;
+
+        }
+
+        .infos .name {
+
+            font-size: 30px;
+            color: var(--current-color1);
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            padding-left: 25%;
+            transition: all .6s ease;
+
+        }
+
+        .card .lorem {
+            font-size: 15.5px;
+            color: #eceaed;
+            letter-spacing: 2px;
+
+        }
+
+        .card .btn-details {
+            width: 100%;
+            height: 60px;
+            margin: 35px auto;
+            border-radius: 5px;
+            background-color: var(--current-color1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 25px;
+            letter-spacing: 10px;
+            font-weight: 700;
+            transition: all .7s ease;
+        }
+
+        .card .btn-details:hover {
+            transform: scale(1.09);
+        }
+
+        .card .action {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+        .action i {
+            font-size: 24px;
+            transition: all .7s ease;
+            color: var(--currente-color2);
+        }
+
+        .action:hover i {
+            transform: scale(1.3);
+        }
+
+        @media screen and (max-width:978px) {
+            .cards .card {
+
+                padding: 14px 15px;
+            }
+
+            .card .infos {
+
+                padding-top: 10px;
+            }
+
+            .cards label {
+                position: absolute;
+                width: 230px;
+                height: 450px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                cursor: pointer;
+                transition: transform 0.55s ease;
+            }
+
+            .infos .name {
+
+                font-size: 20px;
+
+
+            }
+
+            .card .lorem {
+                font-size: 12.5px;
+                color: #eceaed;
+                letter-spacing: 2px;
+
+            }
+
+            .card .btn-details {
+                width: 100%;
+                height: 30px;
+                margin: 8px auto;
+                border-radius: 5px;
+                background-color: var(--current-color1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                font-size: 15px;
+                letter-spacing: 10px;
+                font-weight: 700;
+                transition: all .7s ease;
+            }
+
+            .card .btn-details:hover {
+                transform: scale(1.09);
+            }
+
+            .card .action {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-top: 8px;
+            }
+
+            .action i {
+                font-size: 14px;
+                transition: all .7s ease;
+                color: var(--currente-color2);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #s1:checked~.cards #slide4,
+        #s2:checked~.cards #slide5,
+        #s3:checked~.cards #slide1,
+        #s4:checked~.cards #slide2,
+        #s5:checked~.cards #slide3 {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 45%);
+            transform: translate3d(-70%, 0, -220px);
+            --current-color1: #eceaed;
+            --currente-color2: #404457;
+        }
+
+
+        #s1:checked~.cards #slide5,
+        #s2:checked~.cards #slide1,
+        #s3:checked~.cards #slide2,
+        #s4:checked~.cards #slide3,
+        #s5:checked~.cards #slide4 {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 45%);
+            transform: translate3d(-35%, 0, -120px);
+            --current-color1: #eceaed;
+            --currente-color2: #404457;
+        }
+
+        #s1:checked~.cards #slide1,
+        #s2:checked~.cards #slide2,
+        #s3:checked~.cards #slide3,
+        #s4:checked~.cards #slide4,
+        #s5:checked~.cards #slide5 {
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 50%);
+            transform: translate3d(0, 0, 0);
+            --current-color1: #fad00c;
+            --currente-color2: #eceaed;
+        }
+
+        #s1:checked~.cards #slide2,
+        #s2:checked~.cards #slide3,
+        #s3:checked~.cards #slide4,
+        #s4:checked~.cards #slide5,
+        #s5:checked~.cards #slide1 {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 45%);
+            transform: translate3d(35%, 0, -120px);
+            --current-color1: #eceaed;
+            --currente-color2: #404457;
+        }
+
+        #s1:checked~.cards #slide3,
+        #s2:checked~.cards #slide4,
+        #s3:checked~.cards #slide5,
+        #s4:checked~.cards #slide1,
+        #s5:checked~.cards #slide2 {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 45%);
+            transform: translate3d(70%, 0, -220px);
+            --current-color1: #eceaed;
+            --currente-color2: #404457;
+        }
+
+        /*animation profiles*/
+        /* Base styles */
+        section {
+            height: auto;
+            background-color: #fff;
+        }
+
+        .about-top {
+            min-height: 25vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            flex-direction: column;
+            padding: 20px;
+            text-align: center;
+        }
+
+
+
+        .about-top-title h2 {
+            font-size: 38px;
+        }
+
+        .about-top-desc {
+            margin-top: 40px;
+            width: 50%;
+        }
+
+        .about-top-desc p {
+            font-size: 14px;
+            line-height: 25px;
+        }
+
+        .about-hiring {
+            min-height: 8vh;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .about-hiring .text {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        .about-hiring ul {
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 0;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .about-hiring li {
+            color: #7b7b7be0;
+            list-style: none;
+            margin: 10px 15px;
+            font-size: 30px;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 50px 20px;
+        }
+
+        .hero-title {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-title h2 {
+            font-size: 34px;
+            margin-top: 50px;
+        }
+
+        .herodesc-first {
+            display: flex;
+            justify-content: center;
+            margin: 40px auto;
+            width: 40vw;
+            text-align: center;
+        }
+
+        .herodesc-first p {
+            font-size: 18px;
+        }
+
+        .herodesc-second {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .herodesc-second img {
+            height: 500px;
+            width: 750px;
+            border-radius: 7px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .herodesc-third {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .herodesc-third h3 {
+            font-size: 25px;
+            color: black;
+            text-align: center;
+        }
+
+        .herodesc-forth {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 600px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .herodesc-forth p {
+            margin-top: 30px;
+            line-height: 30px;
+        }
+
+        .herodesc-fifth {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 70px;
+            padding: 0 20px;
+        }
+
+        .herodesc-fifth-title {
+            justify-content: center;
+            margin: auto;
+            text-align: center;
+        }
+
+        .herodesc-fifth-title h4 {
+            font-size: 38px;
+            word-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .herodesc-fifth-desc {
+            justify-content: center;
+            margin: auto;
+            width: 900px;
+            max-width: 100%;
+        }
+
+        .herodesc-fifth-desc p {
+            line-height: 30px;
+            font-size: 18px;
+            font-weight: 400;
+            margin-top: -35px;
+        }
+
+        .herodesc-sixth {
+            display: flex;
+            justify-content: center;
+            margin-top: 120px;
+            text-align: center;
+        }
+
+        .herodesc-sixth h1 {
+            font-family: 'Oleo Script', cursive;
+            color: rgb(206, 101, 3);
+            font-size: 50px;
+            letter-spacing: 5px;
+        }
+
+        /* ----------------------------
+   Responsive Design: Tablets
+----------------------------- */
+        @media screen and (max-width: 1024px) {
+
+            .about-top-desc,
+            .herodesc-first,
+            .herodesc-forth,
+            .herodesc-fifth-desc {
+                width: 80%;
+            }
+
+            .hero-title h2,
+            .herodesc-third h3,
+            .herodesc-fifth-title h4 {
+                font-size: 28px;
+            }
+
+            .herodesc-second img {
+                width: 90%;
+            }
+        }
+
+        /* ----------------------------
+   Responsive Design: Mobiles
+----------------------------- */
+        @media screen and (max-width: 768px) {
+            .about-top-title h2 {
+                font-size: 28px;
+            }
+
+            .about-top-desc {
+                width: 90%;
+            }
+
+            .about-hiring .text {
+                font-size: 16px;
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .about-hiring li {
+                font-size: 24px;
+                margin: 10px;
+            }
+
+            .hero-title h2 {
+                font-size: 26px;
+                margin-top: 30px;
+            }
+
+            .herodesc-first,
+            .herodesc-forth,
+            .herodesc-fifth-desc {
+                width: 100%;
+            }
+
+            .herodesc-first p,
+            .herodesc-forth p,
+            .herodesc-fifth-desc p {
+                font-size: 16px;
+            }
+
+            .herodesc-third h3 {
+                font-size: 22px;
+            }
+
+            .herodesc-fifth-title h4 {
+                font-size: 26px;
+            }
+
+            .herodesc-sixth h1 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <span class="mainLogo1">
+                <img src="img/hireC.jpg" alt="HireoCraft" srcset="">
+                <img src="img/logo.jpg" alt="HireoCraft" srcset="">
+            </span>
+            <div class="navbar">
+                <a href="/">Home</a>
+                <a class="option" href="ats-checker">ATS Analysis Free</a>
+                <a href="privacy">Privacy Policy</a>
+                <a href="about">About</a>
+            </div>
+            <div class="auth-options">
+                <button class="profile" onclick="profileInfo(event)">Profile</button>
+                <a class="button" href="signout">Sign Out</a>
+                <button id="menuIcon" class="menuIcon"><i class="fa fa-bars" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <div id="navbar2" class="navbar2">
+        <a href="/"><i class="fas fa-home"></i> Home</a>
+        <a href="ats-checker"><i class="fas fa-search"></i> ATS Analysis Free</a>
+        <a href="privacy"><i class="fas fa-user-shield"></i> Privacy Policy</a>
+        <a href="about"><i class="fas fa-info-circle"></i> About</a>
+    </div>
+
+    <div class="profile-menu" id="profileDropdown">
+
+    </div>
+
+
+
+
+
+    <section>
+        <div class="about-top">
+            <div class="about-top-title">
+                <h2>About Us</h2>
+            </div>
+
+            <div class="about-top-desc">
+                <p>Our mission is to make the application process simpler, smarter, and more accessible for everyone.
+                    With integrated ATS (Applicant Tracking System) analysis, Hirecraft ensures your resume aligns with
+                    recruiter standards, improving your chances of getting noticed and landing interviews.
+
+                    Backed by intuitive design and advanced AI, we empower users to apply confidently and stand out in
+                    today's competitive job market. Whether you're a fresh graduate or an experienced professional,
+                    Hirecraft is your go-to solution for modern, effective resume creation.</p>
+            </div>
+        </div>
+
+        <div class="about-hiring">
+            <ul>
+                <li>Microsoft&nbsp;&nbsp;<i class="fa-brands fa-microsoft"></i></li>
+                <li>Meta&nbsp;&nbsp;<i class="fa-brands fa-meta"></i></li>
+                <li>Google&nbsp;&nbsp;<i class="fa-brands fa-google"></i></li>
+                <li>Amazon&nbsp;&nbsp;<i class="fa-brands fa-amazon"></i></li>
+                <li>Fire-Fox&nbsp;&nbsp;<i class="fa-brands fa-firefox"></i></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="hero">
+        <div class="hero-title">
+            <h2>Hirecraft: The Rocket Fuel for Your Career</h2>
+        </div>
+
+        <div class="herodesc-first">
+            <p>Take your career to new heights with Hirecraft!
+
+                We provide the ultimate online resume builder and expert career guidance to help you navigate every step
+                of the recruitment process—all the way to your dream job.</p>
+        </div>
+
+        <div class="herodesc-second">
+            <img src="img/zety-team.webp" alt="">
+        </div>
+
+
+
+        <div class="herodesc-fifth">
+            <div class="herodesc-fifth-title">
+                <h4>How It All Started</h4>
+            </div>
+
+            <div class="herodesc-fifth-desc">
+                <p>
+                    Hirecraft is the brainchild of a passionate team of students who set out on a mission to
+                    revolutionize
+                    the job application process. What started as a university project quickly evolved into a powerful
+                    tool
+                    designed to help job seekers craft professional resumes and cover letters effortlessly.
+
+                    Driven by innovation and a deep understanding of career challenges, we built an intuitive platform
+                    that
+                    makes job applications seamless and stress-free.
+                </p>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="second-body">
+            <input type="radio" name="slider" id="s1" checked>
+            <input type="radio" name="slider" id="s2">
+            <input type="radio" name="slider" id="s3">
+            <input type="radio" name="slider" id="s4">
+            <input type="radio" name="slider" id="s5">
+
+            <div class="cards">
+                <label for="s1" id="slide1">
+
+                    <div class="card">
+                        <div class="image">
+                            <img src="team_pic/Akash.jpg" alt="Akash Hazra">
+                            <div class="dots">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+
+                        <div class="infos">
+                            <span class="name">Akash Hazra</span>
+                            <span class="lorem">Frontend Designer & Developer.Study at Brainware University </span>
+
+                            <a href="/details" class="btn-details">Details</a>
+
+
+                            <div class="action">
+                                <i class="fa-brands fa-whatsapp"></i></i>
+                                <i class="fa-solid fa-envelope"></i></i>
+                                <i class="fa-brands fa-x-twitter"></i></i>
+                                <i class="fa-brands fa-instagram"></i></i>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+
+
+                <label for="s2" id="slide2">
+
+                    <div class="card">
+                        <div class="image">
+                            <img src="team_pic/Aniket.jpg" alt="Aniket Banerjee">
+                            <div class="dots">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+
+                        <div class="infos">
+                            <span class="name">Aniket Banerjee</span>
+                            <span class="lorem">Frontend Developer & Backend Developer. Study at Brainware
+                                University.</span>
+
+                            <a href="/details" class="btn-details">Details</a>
+
+
+                            <div class="action">
+                                <i class="fa-brands fa-whatsapp"></i></i>
+                                <i class="fa-solid fa-envelope"></i></i>
+                                <i class="fa-brands fa-x-twitter"></i></i>
+                                <i class="fa-brands fa-instagram"></i></i>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+
+
+                <label for="s3" id="slide3">
+
+                    <div class="card">
+                        <div class="image">
+                            <img src="team_pic/Sarif.jpg" alt="Sarif Mondal">
+                            <div class="dots">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+
+                        <div class="infos">
+                            <span class="name">Sarif Mondal</span>
+                            <span class="lorem">Frontend & Backend Developer. Study at Brainware University</span>
+
+                            <a href="/details" class="btn-details">Details</a>
+
+
+                            <div class="action">
+                                <i class="fa-brands fa-whatsapp"></i></i>
+                                <i class="fa-solid fa-envelope"></i></i>
+                                <i class="fa-brands fa-x-twitter"></i></i>
+                                <i class="fa-brands fa-instagram"></i></i>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+
+
+                <label for="s4" id="slide4">
+
+                    <div class="card">
+                        <div class="image">
+                            <img src="team_pic/Tanmay.jpg" alt="Tanmay Mal">
+                            <div class="dots">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+
+                        <div class="infos">
+                            <span class="name">Tanmay Mal</span>
+                            <span class="lorem">Frontend Developer. Study at Brainware University</span>
+
+                            <a href="/details" class="btn-details">Details</a>
+
+
+                            <div class="action">
+                                <i class="fa-brands fa-whatsapp"></i></i>
+                                <i class="fa-solid fa-envelope"></i></i>
+                                <i class="fa-brands fa-x-twitter"></i></i>
+                                <i class="fa-brands fa-instagram"></i></i>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+
+
+                <label for="s5" id="slide5">
+
+                    <div class="card">
+                        <div class="image">
+                            <img src="team_pic/Tanu.jpg" alt="Tanushree ghosh">
+                            <div class="dots">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+
+                        <div class="infos">
+                            <span class="name">Tanusree Ghosh</span>
+                            <span class="lorem">Frontend Developer. Study at Brainware University</span>
+
+                            <a href="/details" class="btn-details">Details</a>
+
+
+                            <div class="action">
+                                <i class="fa-brands fa-whatsapp"></i></i>
+                                <i class="fa-solid fa-envelope"></i></i>
+                                <i class="fa-brands fa-x-twitter"></i></i>
+                                <i class="fa-brands fa-instagram"></i></i>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+        <footer>
+            <div class="footer">
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <span class="mainLogo">
+                            <img src="img/hireC.jpg" alt="HireoCraft" srcset="">
+                            <img src="img/logo.jpg" alt="HireoCraft" srcset="">
+                        </span>
+                    </div>
+                    <div class="footer-column">
+                        <h4>AI Tools</h4>
+                        <a href="/dashboard">Create Resume</a>
+                        <a href="ats-checker">ATS Analysis</a>
+
+                    </div>
+                    <div class="footer-column">
+                        <h4>Information</h4>
+                        <a href="/">Home</a>
+                        <a href="about">About</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <a href="terms">Terms of Service</a>
+                        <a href="privacy">Privacy Policy</a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=webncommunity@gmail.com&su=Write%20your%20queries&body=">Contact Us</a>
+
+                    </div>
+                    <div class="footer-column">
+                        <h4>Follow Us</h4>
+                        <span class="followus"><a href="http://"><svg xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                                    <path
+                                        d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z"
+                                        stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                                    <path
+                                        d="M16.9265 8.02637H13.9816C12.9378 8.02637 12.0894 8.86847 12.0817 9.91229L11.9964 21.4268M10.082 14.0017H14.8847"
+                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg></a>
+                            <a href="http://"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                    height="24" color="#000000" fill="none">
+                                    <path
+                                        d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z"
+                                        stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                                    <path
+                                        d="M16.5 12C16.5 14.4853 14.4853 16.5 12 16.5C9.51472 16.5 7.5 14.4853 7.5 12C7.5 9.51472 9.51472 7.5 12 7.5C14.4853 7.5 16.5 9.51472 16.5 12Z"
+                                        stroke="currentColor" stroke-width="1.5" />
+                                    <path d="M17.5078 6.5L17.4988 6.5" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg></a>
+                            <a href="http://">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                                    color="#000000" fill="none">
+                                    <path
+                                        d="M2 18.5C3.76504 19.521 5.81428 20 8 20C14.4808 20 19.7617 14.8625 19.9922 8.43797L22 4.5L18.6458 5C17.9407 4.37764 17.0144 4 16 4C13.4276 4 11.5007 6.51734 12.1209 8.98003C8.56784 9.20927 5.34867 7.0213 3.48693 4.10523C2.25147 8.30185 3.39629 13.3561 6.5 16.4705C6.5 17.647 3.5 18.3488 2 18.5Z"
+                                        stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                                </svg>
+                            </a>
+                            <a href="http://"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                    height="24" color="#000000" fill="none">
+                                    <path
+                                        d="M12 20.5C13.8097 20.5 15.5451 20.3212 17.1534 19.9934C19.1623 19.5839 20.1668 19.3791 21.0834 18.2006C22 17.0221 22 15.6693 22 12.9635V11.0365C22 8.33073 22 6.97787 21.0834 5.79937C20.1668 4.62088 19.1623 4.41613 17.1534 4.00662C15.5451 3.67877 13.8097 3.5 12 3.5C10.1903 3.5 8.45489 3.67877 6.84656 4.00662C4.83766 4.41613 3.83321 4.62088 2.9166 5.79937C2 6.97787 2 8.33073 2 11.0365V12.9635C2 15.6693 2 17.0221 2.9166 18.2006C3.83321 19.3791 4.83766 19.5839 6.84656 19.9934C8.45489 20.3212 10.1903 20.5 12 20.5Z"
+                                        stroke="currentColor" stroke-width="1.5" />
+                                    <path
+                                        d="M15.9621 12.3129C15.8137 12.9187 15.0241 13.3538 13.4449 14.2241C11.7272 15.1705 10.8684 15.6438 10.1728 15.4615C9.9372 15.3997 9.7202 15.2911 9.53799 15.1438C9 14.7089 9 13.8059 9 12C9 10.1941 9 9.29112 9.53799 8.85618C9.7202 8.70886 9.9372 8.60029 10.1728 8.53854C10.8684 8.35621 11.7272 8.82945 13.4449 9.77593C15.0241 10.6462 15.8137 11.0813 15.9621 11.6871C16.0126 11.8933 16.0126 12.1067 15.9621 12.3129Z"
+                                        stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                                </svg></a></span>
+                        <a href="http://">support@hirecraft.com</a>
+                    </div>
+                </div>
+                <p>&copy; 2025 FREE AI Resume Generator. All rights reserved.</p>
+            </div>
+        </footer>
+
+
+        <script>
+
+
+
+
+            function profileInfo(event) {
+                event.stopPropagation();
+                const dropdown = document.getElementById("profileDropdown");
+                dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+            }
+
+
+            document.addEventListener("click", () => {
+                document.getElementById("profileDropdown").style.display = "none";
+            });
+
+
+            document.getElementById("profileDropdown").addEventListener("click", (e) => {
+                e.stopPropagation();
+            });
+
+
+            document.addEventListener("DOMContentLoaded", function () {
+                fetch("/user-list")
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            const user = data.user; // ✅ Fix this
+
+                            const adminprofile = document.getElementById("profileDropdown");
+                            adminprofile.innerHTML = `
+                    <div class="profile2">
+                        <img src="img/default-person.jpg" alt="Admin">
+                    </div>
+                    <p><strong>Name:</strong> ${user.name}</p>
+                    <p><strong>Email:</strong> ${user.email}</p>
+                    <a href="signout" class="logout-btn">Log Out</a>`;
+                        }
+                    })
+                    .catch(error => {
+                        alert("Server error!");
+                        console.error(error);
+                    });
+            });
+
+
+
+
+
+
+
+            const navbar = document.getElementById("navbar2");
+            const menuIcon = document.getElementById("menuIcon");
+
+            // Initially hide navbar
+            navbar.style.right = "-200px";
+            navbar.style.display = "none";
+
+            // Toggle navbar on menu icon click
+            menuIcon.addEventListener("click", function (event) {
+                event.stopPropagation(); // Prevent click from bubbling up to document
+                if (navbar.style.right === "-200px") {
+                    navbar.style.right = "10px";
+                    navbar.style.display = "flex";
+                } else {
+                    navbar.style.right = "-200px";
+                    navbar.style.display = "none";
+                }
+            });
+
+            // Hide navbar if clicked anywhere else on the document
+            document.addEventListener("click", function (event) {
+                // If the click is outside both the navbar and the menuIcon
+                if (!navbar.contains(event.target) && !menuIcon.contains(event.target)) {
+                    navbar.style.right = "-200px";
+                    navbar.style.display = "none";
+                }
+            });
+
+
+        </script>
+</body>
+
+</html>

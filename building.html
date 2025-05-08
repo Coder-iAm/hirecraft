@@ -1,0 +1,2336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+
+            /* Ensure full height */
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+        }
+
+        /* Stylish Webkit scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+            /* Width of the scrollbar */
+            height: 10px;
+            /* Height of the scrollbar for horizontal scrolling */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #007bff;
+            /* Color of the scrollbar thumb */
+            border-radius: 10px;
+            /* Rounded corners for the scrollbar thumb */
+            border: 3px solid #f9f9f9;
+            /* Border around the scrollbar thumb */
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+            /* Background color of the track */
+            border-radius: 10px;
+            /* Rounded corners for the track */
+        }
+
+        ::-webkit-scrollbar-button {
+            display: none;
+            /* Hide the buttons (up/down or left/right) on the scrollbar */
+        }
+
+        ::-webkit-scrollbar-corner {
+            background-color: #f9f9f9;
+
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+        }
+
+
+
+        .mainLogo1 img {
+            border-radius: 12px;
+            padding-top: 12px;
+            height: 25px;
+        }
+
+        .mainLogo img {
+            border-radius: 12px;
+            padding-top: 12px;
+            height: 25px;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar a {
+            padding: 9px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            border: 1px solid rgba(255, 0, 0, 0);
+            border-radius: 12px;
+        }
+
+        .navbar a:hover {
+            background-color: #d4d4d47b;
+        }
+
+        .navbar2 {
+            height: 170px;
+            display: none;
+            flex-direction: column;
+            
+            position: absolute;
+            top: 120px;
+            z-index: 1;
+            width: 190px;
+            border: 2px solid rgba(224, 223, 223, 0.356);
+            border-radius: 12px;
+            justify-content: center;
+            align-items: flex-start;
+            background-color: white;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            transition: 0.3s ease;
+        }
+
+        .navbar2 a {
+            padding: 9px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            border: 1px solid rgba(255, 0, 0, 0);
+            border-radius: 12px;
+        }
+
+        .navbar2 a:hover {
+            background-color: #d4d4d47b;
+        }
+
+        .menuIcon {
+            display: none;
+            background-color: white;
+            border: none;
+        }
+
+        .auth-options {
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-content {
+            text-align: center;
+            margin: 40px 20px;
+        }
+
+        .header-content h1 {
+            font-size: 32px;
+            margin: 0;
+        }
+
+        .header-content p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .option {
+            border: none;
+            background: #ffffff;
+            color: #007bff;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .button,
+        .profile,
+        .google {
+            padding: 12px 25px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.2s ease-in-out;
+
+        }
+
+        .button {
+            color: #ffffff;
+            background: linear-gradient(to right, rgb(29, 142, 235), rgb(11, 11, 161));
+            border: none;
+            text-decoration: none;
+        }
+
+        .button:hover,
+        .profile:hover,
+        .google:hover {
+            transform: translateY(3px);
+        }
+
+        .profile {
+            background-color: rgba(197, 197, 197, 0.119);
+            color: rgb(27, 27, 27);
+            border: none;
+            border: 2px solid rgb(81, 81, 81);
+        }
+
+        .profile:hover {
+            background-color: #4248bc;
+            color: #ffffff;
+        }
+
+        .google {
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+
+        .google:hover {
+            background-color: #0056b3;
+        }
+
+        .Main-body {
+            height: auto;
+
+        }
+
+        .footer {
+            background-color: white;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            text-align: center;
+            color: #333;
+
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+
+            gap: 60px;
+        }
+
+        .footer-column h4 {
+            font-weight: bold;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #007bff;
+            display: block;
+            margin: 12px 0;
+        }
+
+        .footer a:hover {
+            color: #0056b3;
+        }
+
+        .followus {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .followus a {
+            display: flex;
+            align-items: center;
+            width: 30px;
+            justify-content: center;
+            border: 1px solid rgba(255, 0, 0, 0);
+            border-radius: 12px;
+        }
+
+        .followus a:hover {
+            background-color: #908d8d78;
+        }
+
+        @media (max-width: 430px) {
+            .header {
+
+                align-items: center;
+                padding: 10px;
+            }
+
+            .navbar {
+                align-items: center;
+                gap: 10px;
+            }
+
+            .header-content h1 {
+                font-size: 18px;
+            }
+
+            .header-content p {
+                font-size: 14px;
+            }
+
+            .button,
+            .profile,
+            .google {
+                font-size: 13px;
+                padding: 9px 18px;
+            }
+
+            .footer {
+                flex-direction: column;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .header-content h1 {
+                font-size: 16px;
+            }
+
+            .header-content p {
+                font-size: 13px;
+            }
+
+            .button,
+            .profile,
+            .google {
+                font-size: 12px;
+                padding: 7px 14px;
+            }
+        }
+
+        @media (min-width: 1366px) and (max-width: 1920px) {
+            .header {
+                padding: 25px;
+            }
+
+            .header-content h1 {
+                font-size: 40px;
+            }
+
+            .header-content p {
+                font-size: 22px;
+            }
+
+            .button,
+            .profile,
+            .google {
+                font-size: 18px;
+                padding: 15px 30px;
+            }
+        }
+
+        @media (max-width: 967px) {
+            .navbar {
+                display: none;
+            }
+
+            .menuIcon {
+                display: block;
+            }
+
+            .footer-links {
+                flex-direction: column;
+            }
+
+            .footer-links {
+
+                gap: 30px;
+            }
+
+            .mainLogo1 img {
+    border-radius: 12px;
+    padding-top: 12px;
+    height: 18px;
+}
+
+.mainLogo img {
+    border-radius: 12px;
+    padding-top: 12px;
+    height: 18px;
+}
+
+        }
+
+        /*horizontal scroll bar*/
+        .scrollbar-visible::-webkit-scrollbar {
+            height: 10px;
+        }
+
+        .scrollbar-visible::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            border-radius: 5px;
+        }
+
+        .scrollbar-visible::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #a0aec0, #cbd5e0);
+            border-radius: 5px;
+            border: 2px solid #f0f0f0;
+        }
+
+        .scrollbar-visible::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, #cbd5e0, #e2e8f0);
+        }
+
+        /*Extra thing*/
+
+        .main-container {
+            text-align: center;
+            padding: 2rem 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+        }
+
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            min-height: 200px;
+            /* Minimum height for the card container */
+        }
+
+        .card {
+            background-color: #ffffff;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+
+        .card img {
+            margin-bottom: 0.5rem;
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .card h2,
+        .card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: #374151;
+        }
+
+        .card p {
+            color: #6b7280;
+            font-size: 0.75rem;
+        }
+
+        @media (min-width: 768px) {
+            .card-container {
+                flex-direction: row;
+            }
+        }
+
+        .containery {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            border: 2px solid rgba(139, 139, 139, 0.292);
+            border-radius: 22px;
+            padding: 23px;
+            box-sizing: border-box;
+
+        }
+
+        .articles {
+            background-color: rgba(0, 0, 0, 0);
+            padding: 50px 0;
+            box-sizing: border-box;
+        }
+
+        .articles h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .slider-container {
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            display: flex;
+        }
+
+        .articles-grid {
+            display: flex;
+            scroll-snap-align: start;
+            gap: 20px;
+        }
+
+        .article {
+            flex: 0 0 300px;
+            /* Each article will take up 300px */
+            scroll-snap-align: start;
+            background-color: #ffffff00;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 14px;
+            border: 2px solid black;
+
+        }
+
+        .article img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .article h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+
+        @media screen and (max-width:740px) {
+            .article {
+                height: 400px;
+
+            }
+
+            .article img {
+                max-width: 70%;
+
+            }
+        }
+
+        /* CSS for the button */
+        .use-template-button {
+            background-color: #007BFF;
+            /* Fallback solid color */
+            background-image: linear-gradient(45deg, #007BFF, #00BFFF);
+            /* Gradient background */
+            color: white;
+            /* White text */
+            padding: 12px 24px;
+            /* Slightly larger padding */
+            border: none;
+            /* No border */
+            border-radius: 25px;
+            /* More rounded corners */
+            font-size: 1em;
+            /* Font size */
+            font-weight: 600;
+            /* Bold text */
+            cursor: pointer;
+            /* Pointer cursor on hover */
+            transition: all 0.3s ease;
+            /* Smooth transition for all properties */
+            text-align: center;
+            /* Center text */
+            display: inline-block;
+            /* Inline block for better control */
+            margin-top: 15px;
+            /* Margin on top */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow */
+            position: relative;
+            /* For pseudo-elements */
+            overflow: hidden;
+            /* Hide overflow for pseudo-elements */
+        }
+
+        .use-template-button:hover {
+            background-image: linear-gradient(45deg, #0056b3, #0080FF);
+            /* Darker gradient on hover */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            /* Larger shadow on hover */
+            transform: translateY(-2px);
+            /* Slight lift effect */
+        }
+
+        .use-template-button:active {
+            transform: translateY(0);
+            /* Reset lift effect when clicked */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Reset shadow when clicked */
+        }
+
+
+
+        .use-template-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background-color: rgba(255, 255, 255, 0.3);
+            /* Semi-transparent white */
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            opacity: 0;
+        }
+
+        .use-template-button:active::before {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+            transition: transform 0s, opacity 0s;
+            /* Instant effect on click */
+        }
+
+        /* Media Query for max-width: 740px */
+        @media screen and (max-width: 740px) {
+            .use-template-button {
+                padding: 10px 20px;
+                /* Smaller padding for smaller screens */
+                font-size: 0.9em;
+                /* Smaller font size */
+                border-radius: 20px;
+                /* Slightly less rounded corners */
+                margin-top: 10px;
+                /* Reduce margin on top */
+            }
+
+            .use-template-button:hover {
+                transform: translateY(-1px);
+                /* Smaller lift effect on hover */
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                /* Smaller shadow on hover */
+            }
+
+            .use-template-button:active {
+                transform: translateY(0);
+                /* Reset lift effect when clicked */
+            }
+        }
+
+
+
+
+        /* Optional: Custom scrollbar for WebKit browsers */
+        .slider-container::-webkit-scrollbar {
+            width: 2px;
+            height: 5px;
+        }
+
+        .slider-container::-webkit-scrollbar-thumb {
+            background: #d60000;
+            border-radius: 10px;
+        }
+
+        .slider-container::-webkit-scrollbar-thumb:hover {
+            background: #7d0000;
+        }
+
+
+
+        /* Utility classes */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            box-sizing: border-box;
+        }
+
+        .flex-1 {
+            flex: 1 1 0%;
+            border: 2px solid rgba(255, 0, 0, 0);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+
+        /* Steps */
+        .steps {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            padding: 13px;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+        }
+
+        .step-number1 {
+            width: 2rem;
+            height: 1.5rem;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.875rem;
+            background: #3b82f6;
+        }
+
+        .step-number2 {
+            width: 2rem;
+            height: 1.5rem;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.875rem;
+            background: #3b82f6;
+        }
+
+        .step-number3 {
+            width: 2rem;
+            height: 1.5rem;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.875rem;
+            background: #3b82f6;
+        }
+
+
+
+        .step span {
+            font-size: 0.875rem;
+            color: #374151;
+        }
+
+        @media screen and (max-width:740px) {
+
+            .step span {
+                font-size: 0.679rem;
+                color: #374151;
+            }
+        }
+
+        /*Css for Step for AI genration*/
+
+
+        .resume-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 15px 40px 15px;
+        }
+
+        /* Main heading styles */
+        .bottom-h1 {
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+            color: #111;
+            font-weight: 700;
+        }
+
+        /* Two-column layout */
+        .content-wrapper {
+            display: flex;
+            flex-direction: row;
+            gap: 60px;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        /* Left column with steps */
+        .steps-column {
+            flex: 0.9;
+            max-width: 480px;
+            z-index: 2;
+            padding-left: 0;
+        }
+
+        /* Step item styling */
+        .step-bottom {
+            display: flex;
+            margin-bottom: 22px;
+            align-items: baseline;
+        }
+
+        /* Purple number indicators */
+        .step-number-bottom {
+            background-color: #6b36e3;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        /* Step text content */
+        .step-content {
+            flex: 1;
+        }
+
+        /* Step headings */
+        .step-heading {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 3px;
+            color: #222;
+        }
+
+        /* Step descriptions */
+        .step-description {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.4;
+            margin-top: 0;
+        }
+
+        /* Right column with preview */
+        .preview-column {
+            flex: 1.3;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: white;
+            position: relative;
+            min-height: 400px;
+            padding: 12px;
+            box-sizing: border-box;
+        }
+
+        /* Image placeholder */
+        .image-placeholder {
+            padding: 0;
+            text-align: center;
+            /* Center the content */
+            background-color: white;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 1024px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+
+            .steps-column,
+            .preview-column {
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .preview-column {
+                margin-top: 40px;
+                min-height: 300px;
+            }
+
+            .image-placeholder {
+                padding: 20px 0;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .bottom-h1 {
+                font-size: 2rem;
+            }
+
+            .step-heading {
+                font-size: 1.1rem;
+            }
+
+
+        }
+
+        @media screen and (max-width: 480px) {
+            .resume-wrapper {
+                padding: 20px 19px 20px 19px;
+            }
+
+            .bottom-h1 {
+                font-size: 1.75rem;
+            }
+
+            .step-bottom {
+                margin-bottom: 20px;
+            }
+
+            .preview-column {
+                min-height: 250px;
+            }
+
+
+        }
+
+        /*faq questions*/
+        .faq-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* FAQ Title */
+        .faq-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #4a5568;
+            margin-bottom: 2rem;
+        }
+
+        /* FAQ Item */
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* FAQ Question */
+        .faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .faq-question:hover {
+            background-color: #f7fafc;
+        }
+
+        .faq-question i {
+            color: #667eea;
+            transition: transform 0.3s ease;
+        }
+
+        /* FAQ Answer */
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: #4a5568;
+        }
+
+        /* Active State */
+        .faq-item.active .faq-answer {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+
+
+        /*form CSS*/
+
+        .form-holder {
+
+            display: none;
+            justify-content: center;
+        }
+
+        .resume-form-container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+        }
+
+        .resume-title {
+            text-align: center;
+            color: #1565C0;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .resume-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .resume-field-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .resume-label {
+            font-weight: 500;
+            color: #0d47a1;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .resume-input,
+        .resume-textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #90caf900;
+            border-radius: 6px;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+            background-color: rgb(241, 241, 241);
+        }
+
+        .resume-input:focus,
+        .resume-textarea:focus {
+            border-color: #0d47a1;
+            box-shadow: 0 0 5px rgba(13, 71, 161, 0.3);
+        }
+
+        .resume-textarea {
+            height: 80px;
+            resize: none;
+        }
+
+        .resume-file-upload {
+            border: none;
+            font-size: 14px;
+            color: #0d47a1;
+        }
+
+        .resume-add-field-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .skill-entry {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-number {
+            font-weight: bold;
+            color: #0d47a1;
+        }
+
+        .skill-input {
+            width: 60%;
+            /* Smaller width */
+        }
+
+
+
+        .resume-add-field-btn {
+            background: #0d47a1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            padding: 6px 12px;
+            cursor: pointer;
+            align-self: flex-start;
+            transition: background 0.3s;
+        }
+
+        .resume-add-field-btn:hover {
+            background: #003c8f;
+        }
+
+        .ai-suggetions {
+            display: flex;
+            align-items: center;
+            background: #0d48a100;
+            color: rgb(42, 42, 42);
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            padding: 6px 12px;
+            cursor: pointer;
+            align-self: flex-start;
+            transition: background 0.3s;
+        }
+
+        .ai-suggetions img {
+            height: 35px;
+        }
+
+        .ai-suggetions:hover {
+            background: #e4e4e4;
+        }
+
+        .resume-submit-btn {
+            padding: 10px;
+            background: #1565C0;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        .resume-submit-btn:hover {
+            background: #0d47a1;
+        }
+
+        .ai-writting {
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            top: 1px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(171, 171, 171, 0.253);
+        }
+
+        .card2 {
+            background-color: #ffffff;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .card2 img {
+            margin-bottom: 0.5rem;
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .card2 h2,
+        .card2 h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: #374151;
+        }
+
+        .card2 p {
+            color: #6b7280;
+            font-size: 0.75rem;
+        }
+
+        .ai-response {
+            width: 100%;
+            display: flex;
+            display: none;
+            justify-content: center;
+        }
+
+        .ai-response div {
+            width: 100%;
+            height: auto;
+            border: 1px solid rgba(255, 0, 0, 0);
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            padding: 8px;
+            color: rgb(38, 38, 38);
+            background-color: rgb(241, 241, 241);
+        }
+
+        .ai-response2 {
+            width: 100%;
+            display: flex;
+            display: none;
+            justify-content: center;
+        }
+
+        .ai-response2 div {
+            width: 100%;
+            height: auto;
+            border: 1px solid rgba(255, 0, 0, 0);
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            padding: 8px;
+            color: rgb(38, 38, 38);
+            background-color: rgb(241, 241, 241);
+        }
+
+        .ai-response3 {
+            width: 100%;
+            display: flex;
+            display: none;
+            justify-content: center;
+        }
+
+        .ai-response3 div {
+            width: 100%;
+            height: auto;
+            border: 1px solid rgba(255, 0, 0, 0);
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            padding: 8px;
+            color: rgb(38, 38, 38);
+            background-color: rgb(241, 241, 241);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .resume-form-container {
+                width: 85%;
+                padding: 20px;
+            }
+
+            .resume-title {
+                font-size: 20px;
+            }
+
+            .resume-input,
+            .resume-textarea {
+                font-size: 13px;
+            }
+
+            .resume-submit-btn {
+                font-size: 14px;
+            }
+        }
+
+.viewresume{
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+        .pdf-container {
+            width: 95%;
+            max-width:100vw; /* Controls max width */
+            height: 80vh;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border: 2px solid white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adds shadow effect */
+            position: relative; /* Helps with absolute positioning */
+        }
+
+        /* iFrame styling */
+        iframe {
+            width: 100%;
+            height: 100%;
+           
+        }
+        .download-btn{
+            width: 100%;
+    display: flex;
+    justify-content: center;
+        }
+        .resume-download-btn{
+            padding: 10px;
+            background: #1565C0;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+            margin-right: 9px;
+            text-decoration: none;
+        }
+        .back-btn{
+            padding: 10px;
+            background: #1b1b1b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+            margin-right: 9px;
+            text-decoration: none;
+        }
+        .resume-download-btn:hover {
+            background: #0d47a1;
+        }
+        .back-btn:hover {
+            background: #000000;
+        }
+
+
+        /*div profile*/
+.profile-menu {
+    margin: 0;
+    position: absolute;
+    top: 50px;
+    right: 12px;
+    background: white;
+    width: 260px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 15px;
+    display: none;
+    z-index: 10;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
+.profile-menu.active {
+    display: block;
+}
+
+.profile-menu h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #222;
+    text-align: center;
+    font-weight: bold;
+}
+
+.profile-menu p {
+    font-size: 14px;
+    color: #444;
+    margin-top: 8px;
+    padding: 5px 10px;
+    background: #f5f5f5;
+    border-radius: 5px;
+    word-wrap: break-word;    /* Break long words */
+  overflow-wrap: break-word;
+  white-space: normal;      /* Allows text to wrap */
+  max-width: 100%;  
+}
+
+.profile-menu p strong {
+    color: #0073e6;
+}
+
+.logout-btn {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background: red;
+    color: white;
+    border-radius: 6px;
+    margin-top: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.logout-btn:hover {
+    background: darkred;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 600px) {
+    .profile-menu {
+        width: 220px;
+        
+    }
+    .profile-menu h4 {
+        font-size: 16px;
+    }
+    .profile-menu p {
+        font-size: 13px;
+    }
+}
+.profile2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.profile2 img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+
+    .profile2 img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+    </style>
+    <style type="text/css" id="mytempCss">
+        ._8mqQwQ {
+            display: none;
+        }
+
+        ._1TWLMK.icF5zO {
+            opacity: 0.01;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <span class="mainLogo1">
+                <img src="img/hireC.jpg" alt="HireoCraft" srcset="">
+                <img src="img/logo.jpg" alt="HireoCraft" srcset="">
+            </span>
+            <div class="navbar">
+                <a href="/">Home</a>
+                <a class="option" href="ats-checker">
+                    ATS Analysis Free
+
+                </a>
+                <a href="privacy">Privacy Policy</a>
+                <a href="about">About</a>
+            </div>
+            <div class="auth-options">
+                <button class="profile" onclick="profileInfo(event)">Profile</button>
+                <a class="button" href="signout">Sign Out</a>
+                <button id="menuIcon" class="menuIcon"><i class="fa fa-bars" aria-hidden="true"></i></button>
+            </div>
+        </div>
+
+    </header>
+
+    <div id="navbar2" class="navbar2">
+        <a href="/"><i class="fas fa-home"></i> Home</a>
+        <a href="ats-checker"><i class="fas fa-search"></i> ATS Analysis Free</a>
+        <a href="privacy"><i class="fas fa-user-shield"></i> Privacy Policy</a>
+        <a href="about"><i class="fas fa-info-circle"></i> About</a>
+    </div>
+
+    <div class="profile-menu" id="profileDropdown">
+   
+    </div>
+
+
+    <div class="Main-body">
+
+        <!-- Main Content -->
+        <main class="flex-1">
+            <!-- Steps -->
+            <div class="steps">
+                <div class="step ">
+                    <div class="step-number1">1</div>
+                    <span>Choose template</span>
+                </div>
+                <div class="step ">
+                    <div class="step-number2">2</div>
+                    <span>Enter your details</span>
+                </div>
+                <div class="step ">
+                    <div class="step-number3">3</div>
+                    <span>Download resume</span>
+                </div>
+
+            </div>
+<!--View Resume-->
+
+<div class="viewresume" id="viewresume">
+
+    <div class="pdf-container" id="pdf-view">
+        
+    </div>
+    <div class="download-btn">
+    <a href="/download"  class="resume-download-btn">Download Resume</a><a href="/dashboard" class="back-btn">Back</a>
+</div>
+</div>
+
+
+
+
+            <!-- fill form -->
+            <div class="form-holder" id="form-holder">
+
+                <div class="resume-form-container">
+                    <form id="resumeForm" class="resume-form">
+
+                        <div class="resume-field-group">
+                            <label class="resume-label">Upload Profile Picture:</label>
+                            <input type="file" id="profilePic" name="profilePic" accept="image/*"
+                                class="resume-file-upload">
+                        </div>
+
+                        <div class="resume-field-group">
+                            <label class="resume-label">Name:</label>
+                            <input type="text" id="name" name="name" class="resume-input" required>
+                        </div>
+
+                        <div class="resume-field-group">
+                            <label class="resume-label">Phone:</label>
+                            <input type="text" id="contact" name="phone" class="resume-input" required>
+                        </div>
+
+                        <div class="resume-field-group">
+                            <label class="resume-label">Email:</label>
+                            <input type="text" id="email" name="email" class="resume-input" required>
+                        </div>
+
+                        <div class="resume-field-group">
+                            <label class="resume-label">Date of Birth:</label>
+                            <input type="date" id="dob" name="dob" class="resume-input" required>
+                        </div>
+
+                        <div class="resume-field-group">
+                            <label class="resume-label">Address:</label>
+                            <textarea id="address" name="address" class="resume-textarea" required></textarea>
+                        </div>
+                        <div class="resume-field-group">
+                            <label class="resume-label">Carrier Objective:</label>
+                            <textarea id="profile" name="profile" class="resume-textarea" required></textarea>
+
+                            <p class="ai-suggetions" id="ai-suggetions" onclick="AIEnchanced()"><img
+                                    src="img/generative.png" alt="" srcset="">Need AI suggetions ? click to generate</p>
+                            <div class="ai-response" id="ai-res">
+                                <div id="ai-response"></div>
+                            </div>
+                        </div>
+
+                        <div class="resume-field-group">
+                            <label class="resume-label">Languages:</label>
+                            <input type="text" id="languages" name="languages" class="resume-input" required>
+                        </div>
+
+                        <div class="resume-field-group resume-add-field-container" id="hobbiesContainer">
+                            <label class="resume-label">Interests:</label>
+                            <input name="hobbies" class="resume-input" required>
+                            <button type="button" class="resume-add-field-btn"
+                                onclick="addFieldhobbies('hobbiesContainer', 'hobbies')">+</button>
+                        </div>
+
+                        <div class="resume-field-group resume-add-field-container" id="skillsContainer">
+                            <label class="resume-label">Skills:</label>
+                            <div class="skill-entry">
+                                <span class="skill-number">1.</span>
+                                <input type="text" name="skills" class="resume-input skill-input" required>
+                                <button type="button" class="resume-add-field-btn" onclick="addSkillField()">+</button>
+
+                            </div>
+
+                        </div>
+                       
+
+                        <div class="resume-field-group resume-add-field-container" id="educationContainer">
+                            <label class="resume-label">Education:</label>
+                            <textarea name="education" class="resume-textarea edu" required></textarea>
+                            <button type="button" class="resume-add-field-btn"
+                                onclick="addField('educationContainer', 'education')">+</button>
+                          
+                        </div>
+
+                        <div class="resume-field-group resume-add-field-container" id="workExperienceContainer">
+                            <label class="resume-label">Work Experience:</label>
+                            <textarea name="work_experience" class="resume-textarea workex" required></textarea>
+                            <button type="button" class="resume-add-field-btn"
+                                onclick="addField('workExperienceContainer', 'work_experience')">+</button>
+                        </div>
+                        <p class="ai-suggetions" id="ai-suggetions" onclick="AIEnchancedwork()"><img
+                            src="img/generative.png" alt="" srcset="">Need AI suggetions ? click to generate</p>
+                    <div class="ai-response" id="ai-res3">
+                        <div id="ai-response3"></div>
+                    </div>
+                        <div class="resume-field-group resume-add-field-container" id="academicProjectsContainer">
+                            <label class="resume-label">Academic Projects:</label>
+                            <textarea name="academic_projects" class="resume-textarea" required></textarea>
+                            <button type="button" class="resume-add-field-btn"
+                                onclick="addField('academicProjectsContainer', 'academic_projects')">+</button>
+                        </div>
+
+                        <div class="resume-field-group resume-add-field-container" id="achievementsContainer">
+                            <label class="resume-label">Certifications:</label>
+                            <textarea name="achievements" class="resume-textarea" required></textarea>
+                            <button type="button" class="resume-add-field-btn"
+                                onclick="addField('achievementsContainer', 'achievements')">+</button>
+                        </div>
+
+                        <button type="submit" class="resume-submit-btn">Create Resume</button>
+                    </form>
+
+                </div>
+
+
+
+            </div>
+
+            <!-- Resume Templates -->
+            <div class="container py-8" id="template-div">
+                <section class="articles">
+                    <div class="containery">
+                        <div class="slider-container">
+                            <div class="articles-grid" id="articlesGrid">
+                                <div class="article">
+                                    <img src="img/tem1.jpg" alt="URL Shortener Affiliate Marketing">
+                                    <h3>Pastel Curve
+                                    </h3>
+                                    <button class="use-template-button" onclick="templateBtn('tem1')">Use this template</button>
+                                </div>
+
+                                <div class="article">
+                                    <img src="img/temp2.png" alt="Best URL Shortener Tools">
+                                    <h3>Crystal White
+                                    </h3>
+                                    <button class="use-template-button" onclick="templateBtn('tem2')">Use this template</button>
+                                </div>
+
+                                <div class="article">
+                                    <img src="img/temp3.png" alt="Custom URL Shorteners for Branding">
+                                    <h3>Midnight Pro
+                                    </h3>
+                                    <button class="use-template-button" onclick="templateBtn('tem3')">Use this template</button>
+                                </div>
+
+                                <div class="article">
+                                    <img src="img/temp4.png" alt="Affiliate Marketing Earnings">
+                                    <h3>Neon Edge
+                                    </h3>
+                                    <button class="use-template-button" onclick="templateBtn('tem4')">Use this template</button>
+                                </div>
+
+                                <div class="article">
+                                    <img src="img/temp5.png" alt="Best Affiliate Programs">
+                                    <h3>Paper Luxe
+                                    </h3>
+                                    <button class="use-template-button"onclick="templateBtn('tem5')">Use this template</button>
+                                </div>
+
+                                <div class="article">
+                                    <img src="img/temp6.png" alt="Affiliate Marketing Website">
+                                    <h3>Ocean Mist
+                                    </h3>
+                                    <button class="use-template-button"onclick="templateBtn('tem6')">Use this template</button>
+                                </div>
+
+                                <div class="article">
+                                    <img src="img/temp7.png" alt="Affiliate Marketing Website">
+                                    <h3>Tech Noir
+                                    </h3>
+                                    <button class="use-template-button"onclick="templateBtn('tem7')">Use this template</button>
+                                </div>
+                                
+                                <div class="article">
+                                    <img src="img/temp8.png" alt="Affiliate Marketing Website">
+                                    <h3>Ivory Slate
+                                    </h3>
+                                    <button class="use-template-button"onclick="templateBtn('tem8')">Use this template</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Terms -->
+
+        </main>
+
+        <!-- add next sections-->
+        <div class="main-container">
+            <h1 class="title">
+                The AI resume builder for everyone
+            </h1>
+            <div class="card-container">
+                <div class="card">
+                    <img alt="Icon of a group of people representing jobseekers"
+                        src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExajl0Mnd0dnl1dWNrZDhib3BzMmQyejJtNG8yNm43dHYwbXFlZDIxbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3xlx0tvyXU0u3lpojo/giphy.gif" />
+                    <h2>
+                        Tailored for Jobseekers
+                    </h2>
+                    <p>
+                        Craft a standout resume that highlights your skills and experiences to attract potential
+                        employers.
+                    </p>
+                </div>
+                <div class="card">
+                    <img alt="Icon of a graduation cap representing university grads"
+                        src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXlucWMzYnVyYTl1amo3MGwxOWZpcGtiNGxraWl1dml6NG9leGNveSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5G88fp8PMsQVFUsgjT/giphy.gif" />
+                    <h2>
+                        Perfect for University Grads
+                    </h2>
+                    <p>
+                        Create a professional resume that showcases your academic achievements and sets you apart from
+                        other graduates.
+                    </p>
+                </div>
+                <div class="card">
+                    <img alt="Icon of a building representing HR professionals"
+                        src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXBjdjdydHlwOG11dmxxaTJhbXNkc2MwdHZ1MzJ2NGhkdHZxa3o2NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4n8R2zT4xbvEnPMs6s/giphy.gif" />
+                    <h2>
+                        Essential for HR Professionals
+                    </h2>
+                    <p>
+                        Streamline the hiring process with customizable resume templates designed to find the best
+                        candidates quickly.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-8">
+                <h2 class="title">
+                    Why Choose Us?
+                </h2>
+                <div class="card-container">
+                    <div class="card">
+                        <img alt="Icon of a clock representing time-saving"
+                            src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2lhb3h4Yjh6YmhlNXhiZGRnYjdmYmd1NThqYmhuZjY2YXF5bGJlbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jq6L4ulcGZMBGYmqme/giphy.gif" />
+                        <h3>
+                            Save Time Efficiently
+                        </h3>
+                        <p>
+                            Create a professional resume in minutes with our easy-to-use AI tools.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <img alt="Icon of a document representing resume optimization"
+                            src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTdncGFrYmh4Mjc0b3M5aGoyeXU0NDl4MnMydHEzb25zNGRlajhoZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/99bDb0Gu3WWQkPTTpP/giphy.gif" />
+                        <h3>
+                            Optimize Your Resume
+                        </h3>
+                        <p>
+                            Our AI ensures your resume is optimized for applicant tracking systems.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <img alt="Icon of a star representing quality"
+                            src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2p2OHdwMXAwdTkza216eHg0OHNhcXkzNGpxbDhvcTA4MG1hdXd1NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Q8ZdhHy8hRJkYARmTm/giphy.gif" />
+                        <h3>
+                            Achieve High-Quality Results
+                        </h3>
+                        <p>
+                            Get a polished and professional resume that stands out from the competition.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Step to Create Ai resume-->
+
+        <div class="resume-wrapper">
+            <h1 class="bottom-h1">Building Your Resume Using Artificial Intelligence</h1>
+
+            <div class="content-wrapper">
+                <!-- Left column with steps -->
+                <div class="steps-column">
+                    <div class="step-bottom">
+                        <div class="step-number-bottom">1</div>
+                        <div class="step-content">
+                            <h2 class="step-heading">Choose a starting point for your design</h2>
+                            <p class="step-description">Begin your resume journey by picking from existing templates or
+                                starting with a clean slate.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-bottom">
+                        <div class="step-number-bottom">2</div>
+                        <div class="step-content">
+                            <h2 class="step-heading">Connect to the intelligent resume assistant</h2>
+                            <p class="step-description">Navigate to the side panel, select the 'Apps' section and launch
+                                the 'Job And Resume AI' application.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-bottom">
+                        <div class="step-number-bottom">3</div>
+                        <div class="step-content">
+                            <h2 class="step-heading">Submit your information</h2>
+                            <p class="step-description">Input your existing resume content alongside the position
+                                description. Select 'Generate tailored suggestions' for AI-optimized content including
+                                professional summary, competencies, work history, and application letter.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-bottom">
+                        <div class="step-number-bottom">4</div>
+                        <div class="step-content">
+                            <h2 class="step-heading">Perfect your AI-generated content</h2>
+                            <p class="step-description">Evaluate and request new versions of the AI suggestions until
+                                you discover content with your preferred style. Simply drag the selected content
+                                elements onto your resume design.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-bottom">
+                        <div class="step-number-bottom">5</div>
+                        <div class="step-content">
+                            <h2 class="step-heading">Finalize and distribute</h2>
+                            <p class="step-description">Complete final adjustments using the user-friendly editing
+                                tools. When you're happy with the result, export as a PDF document or distribute
+                                directly through digital channels.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right column with preview -->
+                <div class="preview-column">
+                    <div class="image-placeholder">
+                        <div class="image-frame">
+                            <img src="https://storage.googleapis.com/a1aa/image/lZatx0zNxX4FhefsOv_4mRj2FynL1Rq8bWyIyZG9DWI.jpg"
+                                alt="Resume Preview" style="width: 100%; height: auto; border-radius: 8px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- faq questions-->
+    <div class="faq-container">
+        <h1 class="faq-title">Frequently Asked Questions</h1>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>What is a professional resume?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                <p>A professional resume is a document that outlines your work experience, education, skills, and
+                    achievements. It is used to apply for jobs and is often the first impression a potential employer
+                    has of you.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>How does the AI resume builder work?
+                </span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                <p>The AI resume builder uses advanced algorithms to analyze your input and generate a well-structured
+                    resume. It suggests improvements and formats your resume to make it more appealing to employers.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>How do you improve your resume with AI?
+                </span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                <p>AI can help improve your resume by providing suggestions for better wording, highlighting key skills,
+                    and ensuring that your resume is tailored to the job you are applying for. It can also help with
+                    formatting and design.</p>
+            </div>
+        </div>
+
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>Is the AI resume builder on Canva free?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                <p>Yes, the AI resume builder on Canva offers a free version with basic features. There are also premium
+                    options available that provide additional features and templates.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>How are you moderating the AI resume builder for safe use?
+                </span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                <p>We use a combination of automated tools and human review to ensure that the AI resume builder is safe
+                    to use. This includes monitoring for inappropriate content and ensuring that the AI suggestions are
+                    accurate and helpful.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- main body end-->
+    </div>
+
+
+
+    <div class="ai-writting" id="ai-writting">
+        <div class="card2">
+            <img alt="Icon of a star representing quality"
+                src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2p2OHdwMXAwdTkza216eHg0OHNhcXkzNGpxbDhvcTA4MG1hdXd1NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Q8ZdhHy8hRJkYARmTm/giphy.gif" />
+            <h3>
+                Generating.......
+            </h3>
+            <p>
+                It may take few minutes please wait till generate...
+            </p>
+        </div>
+    </div>
+
+    <div class="ai-writting" id="ai-writting2">
+        <div class="card">
+            <img alt="Icon of a star representing quality"
+                src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2p2OHdwMXAwdTkza216eHg0OHNhcXkzNGpxbDhvcTA4MG1hdXd1NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Q8ZdhHy8hRJkYARmTm/giphy.gif" />
+            <h3>
+                Creating Resume.......
+            </h3>
+            <p>
+                It may take few minutes please wait till generate...
+            </p>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <span class="mainLogo">
+                        <img src="img/hireC.jpg" alt="HireoCraft" srcset="">
+                        <img src="img/logo.jpg" alt="HireoCraft" srcset="">
+                    </span>
+                </div>
+                <div class="footer-column">
+                    <h4>AI Tools</h4>
+                    <a href="/dashboard">Create Resume</a>
+                    <a href="ats-checker">ATS Analysis</a>
+                    
+                </div>
+                <div class="footer-column">
+                    <h4>Information</h4>
+                    <a href="/">Home</a>
+                    <a href="about">About</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="terms">Terms of Service</a>
+                    <a href="privacy">Privacy Policy</a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=webncommunity@gmail.com&su=Write%20your%20queries&body=">Contact Us</a>
+
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <span class="followus"><a href="http://"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                width="24" height="24" color="#000000" fill="none">
+                                <path
+                                    d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                                <path
+                                    d="M16.9265 8.02637H13.9816C12.9378 8.02637 12.0894 8.86847 12.0817 9.91229L11.9964 21.4268M10.082 14.0017H14.8847"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg></a>
+                        <a href="http://"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                height="24" color="#000000" fill="none">
+                                <path
+                                    d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                                <path
+                                    d="M16.5 12C16.5 14.4853 14.4853 16.5 12 16.5C9.51472 16.5 7.5 14.4853 7.5 12C7.5 9.51472 9.51472 7.5 12 7.5C14.4853 7.5 16.5 9.51472 16.5 12Z"
+                                    stroke="currentColor" stroke-width="1.5" />
+                                <path d="M17.5078 6.5L17.4988 6.5" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg></a>
+                        <a href="http://">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                                color="#000000" fill="none">
+                                <path
+                                    d="M2 18.5C3.76504 19.521 5.81428 20 8 20C14.4808 20 19.7617 14.8625 19.9922 8.43797L22 4.5L18.6458 5C17.9407 4.37764 17.0144 4 16 4C13.4276 4 11.5007 6.51734 12.1209 8.98003C8.56784 9.20927 5.34867 7.0213 3.48693 4.10523C2.25147 8.30185 3.39629 13.3561 6.5 16.4705C6.5 17.647 3.5 18.3488 2 18.5Z"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <a href="http://"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                height="24" color="#000000" fill="none">
+                                <path
+                                    d="M12 20.5C13.8097 20.5 15.5451 20.3212 17.1534 19.9934C19.1623 19.5839 20.1668 19.3791 21.0834 18.2006C22 17.0221 22 15.6693 22 12.9635V11.0365C22 8.33073 22 6.97787 21.0834 5.79937C20.1668 4.62088 19.1623 4.41613 17.1534 4.00662C15.5451 3.67877 13.8097 3.5 12 3.5C10.1903 3.5 8.45489 3.67877 6.84656 4.00662C4.83766 4.41613 3.83321 4.62088 2.9166 5.79937C2 6.97787 2 8.33073 2 11.0365V12.9635C2 15.6693 2 17.0221 2.9166 18.2006C3.83321 19.3791 4.83766 19.5839 6.84656 19.9934C8.45489 20.3212 10.1903 20.5 12 20.5Z"
+                                    stroke="currentColor" stroke-width="1.5" />
+                                <path
+                                    d="M15.9621 12.3129C15.8137 12.9187 15.0241 13.3538 13.4449 14.2241C11.7272 15.1705 10.8684 15.6438 10.1728 15.4615C9.9372 15.3997 9.7202 15.2911 9.53799 15.1438C9 14.7089 9 13.8059 9 12C9 10.1941 9 9.29112 9.53799 8.85618C9.7202 8.70886 9.9372 8.60029 10.1728 8.53854C10.8684 8.35621 11.7272 8.82945 13.4449 9.77593C15.0241 10.6462 15.8137 11.0813 15.9621 11.6871C16.0126 11.8933 16.0126 12.1067 15.9621 12.3129Z"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                            </svg></a></span>
+                    <a href="http://">support@hirecraft.com</a>
+                </div>
+            </div>
+            <p>&copy; 2025 FREE AI Resume Generator. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+
+    <script>
+
+
+function profileInfo(event) {
+    event.stopPropagation();
+    const dropdown = document.getElementById("profileDropdown");
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+}
+
+
+document.addEventListener("click", () => {
+    document.getElementById("profileDropdown").style.display = "none";
+});
+
+
+document.getElementById("profileDropdown").addEventListener("click", (e) => {
+    e.stopPropagation();
+});
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+    fetch("/user-list")
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                const user = data.user; // ✅ Fix this
+
+                const adminprofile = document.getElementById("profileDropdown");
+                adminprofile.innerHTML = `
+                    <div class="profile2">
+                        <img src="img/default-person.jpg" alt="Admin">
+                    </div>
+                    <p><strong>Name:</strong> ${user.name}</p>
+                    <p><strong>Email:</strong> ${user.email}</p>
+                    <a href="signout" class="logout-btn">Log Out</a>`;
+            }
+        })
+        .catch(error => {
+            alert("Server error!");
+            console.error(error);
+        });
+});
+
+
+
+
+
+
+
+   
+
+const navbar = document.getElementById("navbar2");
+const menuIcon = document.getElementById("menuIcon");
+
+// Initially hide navbar
+navbar.style.right = "-200px";
+navbar.style.display = "none";
+
+// Toggle navbar on menu icon click
+menuIcon.addEventListener("click", function (event) {
+    event.stopPropagation(); // Prevent click from bubbling up to document
+    if (navbar.style.right === "-200px") {
+        navbar.style.right = "10px";
+        navbar.style.display = "flex";
+    } else {
+        navbar.style.right = "-200px";
+        navbar.style.display = "none";
+    }
+});
+
+// Hide navbar if clicked anywhere else on the document
+document.addEventListener("click", function (event) {
+    // If the click is outside both the navbar and the menuIcon
+    if (!navbar.contains(event.target) && !menuIcon.contains(event.target)) {
+        navbar.style.right = "-200px";
+        navbar.style.display = "none";
+    }
+});
+
+
+        //faq//
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const icon = question.querySelector('i');
+
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+
+                    // Close all items
+                    faqItems.forEach(el => {
+                        el.classList.remove('active');
+                        el.querySelector('.faq-answer').style.maxHeight = '0';
+                        el.querySelector('i').style.transform = 'rotate(0deg)';
+                    });
+
+                    // Open clicked item if it was closed
+                    if (!isActive) {
+                        item.classList.add('active');
+                        answer.style.maxHeight = `${answer.scrollHeight}px`;
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+
+            // Keyboard accessibility
+            faqItems.forEach(item => {
+                item.querySelector('.faq-question').addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        item.querySelector('.faq-question').click();
+                    }
+                });
+            });
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function AIEnchanced() {
+
+            const profile = document.getElementById("profile").value;
+            const Loading = document.getElementById("ai-writting");
+
+            Loading.style.display = "flex";
+
+            fetch("/ai-enchanced", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ profile })
+            })
+
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        Loading.style.display = "none";
+                        const res = document.getElementById("ai-response");
+                        const airesdiv = document.getElementById("ai-res");
+                        airesdiv.style.display = "flex";
+                        res.innerHTML = "";
+                        res.innerHTML = data.output;
+
+                    } else {
+                        Loading.style.display = "none";
+                        alert("server error");
+                    }
+                })
+
+        }
+
+
+
+
+
+
+        function AIEnchancedwork() {
+
+            const skillsElements = document.querySelectorAll(".workex");
+            const skills = Array.from(skillsElements).map(el => el.value);
+
+            // Convert array to a string without brackets
+            const newedu = skills.join(", ");
+
+
+
+            const Loading = document.getElementById("ai-writting");
+
+            Loading.style.display = "flex";
+
+            fetch("/ai-enchanced-other", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ newedu })
+            })
+
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        Loading.style.display = "none";
+                        const res = document.getElementById("ai-response3");
+                        const airesdiv = document.getElementById("ai-res3");
+                        airesdiv.style.display = "flex";
+                        res.innerHTML = "";
+                        res.innerHTML = data.output;
+
+                    } else {
+                        alert("server error");
+                        Loading.style.display = "none";
+                    }
+                })
+
+        }
+
+
+
+
+        let skillCount = 1; // Initialize numbering
+
+        function addSkillField() {
+            skillCount++;
+            let container = document.getElementById("skillsContainer");
+
+            let div = document.createElement("div");
+            div.classList.add("skill-entry");
+
+            let numberSpan = document.createElement("span");
+            numberSpan.classList.add("skill-number");
+            numberSpan.textContent = skillCount + ".";
+
+            let input = document.createElement("input");
+            input.type = "text";
+            input.name = "skills";
+            input.classList.add("resume-input", "skill-input");
+            input.required = true;
+
+            div.appendChild(numberSpan);
+            div.appendChild(input);
+            container.appendChild(div);
+        }
+
+        function addField(containerId, inputName) {
+            let container = document.getElementById(containerId);
+            let input = document.createElement("textarea");
+            if (containerId == "workExperienceContainer") {
+                input.className = "resume-textarea workex";
+            }
+            else {
+                input.className = "resume-textarea";
+            }
+
+            input.name = inputName;
+            input.style.display = "block";
+            input.style.marginTop = "5px";
+
+            // Insert input before the button
+            let button = container.querySelector("button");
+            container.insertBefore(input, button);
+        }
+
+        function addFieldhobbies(containerId, inputName) {
+            let container = document.getElementById(containerId);
+            let input = document.createElement("input");
+            input.className = "resume-input";
+            input.name = inputName;
+            input.style.display = "block";
+            input.style.marginTop = "5px";
+
+            // Insert input before the button
+            let button = container.querySelector("button");
+            container.insertBefore(input, button);
+        }
+
+
+        document.getElementById('resumeForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const Loading = document.getElementById("ai-writting2");
+
+            Loading.style.display = "flex";
+
+            let formData = new FormData(this);
+            fetch("/create-resume", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data =>{
+                    const pdfview=document.getElementById("pdf-view");
+                    pdfview.innerHTML=`<iframe src="PDFResume/${data.file}#toolbar=0"></iframe>`;
+                    const formHolder = document.getElementById("form-holder");
+                    formHolder.style.display = "none";
+                    Loading.style.display = "none";
+                    const resumeview = document.getElementById("viewresume");
+                 resumeview.style.display="flex";
+                
+                
+                })
+                .catch(error => alert("Error sending data!",error));
+        });
+
+
+
+        function templateBtn(temp) {
+
+            fetch("/template", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ temp })
+            })
+
+                .then(response => response.json())
+                .then(data => {
+
+                    if(data.success){
+            const temDiv = document.getElementById("template-div");
+            const formHolder = document.getElementById("form-holder");
+            temDiv.style.display = "none";
+            formHolder.style.display = "flex";
+                    }
+                    else{
+                        alert("error select template!");
+                    }
+        })
+
+    }
+
+
+
+    </script>
+</body>
+
+</html>

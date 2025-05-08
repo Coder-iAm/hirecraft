@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Template</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Helvetica Neue', sans-serif;
+        background-color: #eaeff1;
+        color: #2c3e50;
+        font-size: 16px;
+        padding: 24px;
+        height: auto;
+    }
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        background: #fff;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    .sidebar {
+        width: 30%;
+        background: #1a1a2e;
+        color: #fff;
+        padding: 32px 24px;
+    }
+    .profile {
+        text-align: center;
+    }
+    .profile img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #e94560;
+        margin-bottom: 16px;
+    }
+    .namecontact h1 {
+        font-size: 22px;
+        margin-bottom: 8px;
+        color: #f4f4f4;
+    }
+    .contact p {
+        font-size: 14px;
+        margin: 6px 0;
+        color: #ddd;
+    }
+    .section-title {
+        margin-top: 24px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        border-bottom: 1px solid #e94560;
+        padding-bottom: 6px;
+        margin-bottom: 10px;
+    }
+    .sidebar p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+    .content {
+        width: 70%;
+        padding: 32px;
+    }
+    .content .section-title {
+        color: #1a1a2e;
+        border-color: #1a1a2e;
+    }
+    .content p {
+        margin-bottom: 10px;
+    }
+    .skills {
+        margin-top: 12px;
+    }
+    .skills div {
+        margin-bottom: 14px;
+    }
+    .bar-container {
+        background: #dcdde1;
+        border-radius: 6px;
+        height: 8px;
+        width: 100%;
+    }
+    .skill-bar {
+        height: 8px;
+        border-radius: 6px;
+        background: #1a1a2e;
+        margin: 4px;
+    }
+    hr.hrline {
+        border: none;
+        height: 1px;
+        background: #ddd;
+        margin: 20px 0;
+    }
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile">
+                <div class="namecontact"><h1>{{name}}</h1>
+            
+                    <div class="contact"><p>PHONE: {{phone}}</p>
+                    <p>EMAIL: {{email}}</p></div></div>
+                <div class="pic">
+                <img src="uploads/profile.jpg" alt="Profile Image">
+            </div>
+            
+            </div>
+            <hr class="hrline">
+            <div class="section-title">CARRIER OBJECTIVE</div>
+            <p>{{profile}}</p>
+            <hr class="hrline">
+           
+            <hr class="hrline">
+            <div class="section-title">PERSONAL INFORMATION</div>
+            <p><strong>DATE OF BIRTH:</strong> {{date-of-birth}}</p>
+            <p><strong>ADDRESS:</strong> {{address}}</p>
+            <p><strong>LANGUAGES:</strong> {{languages}}</p>
+            <hr class="hrline">
+            <div class="section-title">INTEREST</div>
+            <p>{{hobbies}}</p>
+            <hr class="hrline">
+        </div>
+        <div class="content">
+            
+            <div class="section-title">EDUCATION</div>
+            {{education}}
+            <hr class="hrline">
+            <div class="section-title">WORK EXPERIENCE</div>
+            {{experience}}
+            <hr class="hrline">
+            <div class="section-title">ACADEMIC PROJECTS</div>
+            {{academic-projects}}
+            <hr class="hrline">
+            <div class="section-title">CERTIFICATIONS</div>
+            {{achievements}}
+            <hr class="hrline">
+            <div class="section-title">TECHNICAL SKILLS</div>
+            <div class="skills">
+               {{skills}}
+               <hr class="hrline">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

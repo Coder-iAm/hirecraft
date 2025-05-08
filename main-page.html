@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>HireoCraft Free AI Resume Builder with AI ATS Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Stylish Webkit scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 10px;
+    border: 3px solid #f9f9f9;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: #f9f9f9;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+
+
+}
+
+    /* header logo */
+
+.mainLogo1 img {
+    border-radius: 12px;
+    padding-top: 12px;
+    height: 25px;
+}
+
+.mainLogo img {
+    border-radius: 12px;
+    padding-top: 12px;
+    height: 25px;
+}
+
+/* its for the navbar  */
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+/* its for the navbar a tag styling */
+.navbar a {
+    padding: 9px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    border: 1px solid rgba(255, 0, 0, 0);
+    border-radius: 12px;
+}
+
+.navbar a:hover {
+    background-color: #d4d4d47b;
+}
+
+.navbar2 {
+    height: 170px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 120px;
+    width: 190px;
+    border: 2px solid rgba(224, 223, 223, 0.356);
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease;
+    z-index: 50;
+    right: 16px;
+}
+
+.navbar2 a {
+    padding: 9px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    border: 1px solid rgba(255, 0, 0, 0);
+    border-radius: 12px;
+}
+
+.navbar2 a:hover {
+    background-color: #d4d4d47b;
+}
+
+/* menu icon */
+.menuIcon {
+    display: none;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* sign in and menu icon gap*/
+.auth-options {
+    display: flex;
+    gap: 10px;
+}
+
+/* its for the sign in button */
+.button-signIn {
+    padding: 10px 22px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    font-family: 'Rubik';
+    color: #ffffff;
+    background: linear-gradient(to right, rgb(122, 21, 230), rgb(209, 13, 13));
+    border: none;
+    text-decoration: none;
+    transition: 0.6s ease;
+    display: inline-block;
+}
+
+.button-signIn:hover{
+    transform: scale(1.1);
+}
+
+/* main body */
+.Main-body {
+    height: auto;
+}
+
+@media (max-width: 430px) {
+    .header {
+        align-items: center;
+        padding: 10px;
+    }
+
+    .navbar {
+        align-items: center;
+        gap: 10px;
+    }
+
+    .header-content h1 {
+        font-size: 18px;
+    }
+
+    .header-content p {
+        font-size: 14px;
+    }
+
+    .button,
+    .profile,
+    .google {
+        font-size: 13px;
+        padding: 9px 18px;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 390px) {
+    .header-content h1 {
+        font-size: 16px;
+    }
+
+    .header-content p {
+        font-size: 13px;
+    }
+
+    .button,
+    .profile,
+    .google {
+        font-size: 12px;
+        padding: 7px 14px;
+    }
+}
+
+@media (min-width: 1366px) and (max-width: 1920px) {
+    .header {
+        padding: 25px;
+    }
+
+    .header-content h1 {
+        font-size: 40px;
+    }
+
+    .header-content p {
+        font-size: 22px;
+    }
+
+    .button,
+    .profile,
+    .google {
+        font-size: 18px;
+        padding: 5px 22px;
+    }
+}
+
+@media (max-width: 967px) {
+    .navbar {
+        display: none;
+    }
+
+    .menuIcon {
+        display: block;
+    }
+
+    .footer-links {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        gap: 30px;
+    }
+    .mainLogo1 img {
+    border-radius: 12px;
+    padding-top: 12px;
+    height: 18px;
+}
+
+.mainLogo img {
+    border-radius: 12px;
+    padding-top: 12px;
+    height: 18px;
+}
+}
+
+.hero-section {
+    background-color: white;
+}
+
+.hero-section .section-content {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    color: black;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-section .hero-details {
+    max-width: 50%;
+    padding: 20px;
+}
+
+.hero-section .hero-details .title {
+    font-size: 54px;
+    color: #007bff;
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.hero-section .hero-details .subtitle {
+    font-size: 52px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 800;
+    margin: 10px 0;
+    color: #007bff;
+}
+
+.hero-section .hero-details .description {
+    font-size: 19px;
+    font-family: 'Inter', sans-serif;
+    color: rgb(51, 36, 214);
+    margin: 24px 0;
+    line-height: 1.5;
+}
+
+.hero-section .hero-details .hero-button {
+    padding: 15px 30px;
+    background-color: #1333e9;
+    font-size: 25px;
+    border-radius: 12px;
+    font-weight: 800;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hero-section .hero-details .hero-button:hover {
+    background-color: #0a72e2;
+    transform: translateY(-4px);
+}
+
+.hero-section .hero-details .hero-button .icon {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+
+.hero-section .hero-image-wrapper {
+    max-width: 45%;
+    transition: transform 0.5s ease;
+}
+
+.hero-section .hero-image-wrapper:hover {
+    transform: scale(1.05);
+}
+
+.hero-section img {
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Responsive styles for screens up to 740px */
+@media screen and (max-width: 740px) {
+    .hero-section .section-content {
+        flex-direction: column;
+        padding: 40px 20px;
+        min-height: auto;
+    }
+
+    .hero-section .hero-details {
+        max-width: 100%;
+        padding: 0;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .hero-section .hero-details .title {
+        font-size: 36px;
+    }
+
+    .hero-section .hero-details .subtitle {
+        font-size: 32px;
+        margin: 5px 0;
+    }
+
+    .hero-section .hero-details .description {
+        font-size: 16px;
+        margin: 15px 0;
+    }
+
+    .hero-section .hero-details .hero-button {
+        font-size: 18px;
+        padding: 12px 24px;
+        margin: 0 auto;
+    }
+
+    .hero-section .hero-image-wrapper {
+        max-width: 100%;
+        padding: 0;
+        margin-top: 30px;
+    }
+
+    .hero-section .hero-image-wrapper:hover {
+        transform: none;
+    }
+}
+
+/* Additional breakpoint for very small screens */
+@media screen and (max-width: 480px) {
+    .hero-section .hero-details .title {
+        font-size: 28px;
+    }
+
+    .hero-section .hero-details .subtitle {
+        font-size: 24px;
+    }
+
+    .hero-section .hero-details .description {
+        font-size: 14px;
+    }
+
+    .hero-section .hero-details .hero-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* hero footer  content  */
+
+.hero-footer-content {
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-footer-content h2 {
+            color: rgb(20, 20, 20);
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        .hero-footer-content p {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 24px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: rgb(23, 22, 22);
+            margin-top: 20px;
+            max-width: 70vw;
+        }
+
+        .hero-footer-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .hero-footer-img img {
+            height: 140px;
+            width: 100px;
+        }
+/*.hero-footer-content {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-footer-content h2 {
+    color: rgb(20, 20, 20);
+    justify-content: center;
+    position: absolute;
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.hero-footer-content p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(23, 22, 22);
+    margin-top: 180px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 70vw;
+}
+
+.hero-footer-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-footer-img img {
+    height: 140px;
+    width: 100px;
+    margin-top: -30px;
+}*/
+
+/* first section */
+.first {
+    height: 75vh;
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    color: black;
+}
+
+.text h2 {
+    font-size: 50px;
+    margin-left: 20px;
+    max-width: 50vw;
+    font-family: 'Rubik';
+}
+
+.text p {
+    margin-left: 20px;
+    max-width: 28vw;
+    font-size: 19px;
+    color: rgba(30, 30, 30, 0.753);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.first-sec-img img {
+    height: 60vh;
+}
+
+/* its for the section second */
+.second {
+    height: 75vh;
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    color: black;
+}
+
+.text-second h2 {
+    font-size: 50px;
+    margin-left: 20px;
+    max-width: 50vw;
+    font-family: 'Rubik';
+}
+
+.text-second p {
+    margin-left: 20px;
+    max-width: 28vw;
+    font-size: 19px;
+    color: rgba(30, 30, 30, 0.753);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.second-sec-img img {
+    height: 60vh;
+}
+
+/* its for third section */
+.third {
+    height: 75vh;
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    color: black;
+}
+
+.text-third h2 {
+    font-size: 50px;
+    margin-left: 20px;
+    max-width: 50vw;
+    font-family: 'Rubik';
+}
+
+.text-third p {
+    margin-left: 20px;
+    max-width: 40vw;
+    font-size: 19px;
+    color: rgba(30, 30, 30, 0.753);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.third-sec-img img {
+    height: 60vh;
+}
+
+/* its for forth section */
+.forth {
+    height: 75vh;
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    color: black;
+}
+
+.text-forth h2 {
+    font-size: 50px;
+    margin-left: 20px;
+    max-width: 50vw;
+    font-family: 'Rubik';
+}
+
+.text-forth p {
+    margin-left: 20px;
+    max-width: 30vw;
+    font-size: 19px;
+    color: rgba(30, 30, 30, 0.753);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.forth-sec-img img {
+    height: 50vh;
+}
+
+/* container for the resume template */
+.container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* Heading styles */
+h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #1a202c;
+}
+
+/* Grid styles */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Card styles */
+.card {
+    background-color: #f7fafc;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Icon styles */
+.icon {
+    font-size: 2.25rem;
+    color: #718096;
+    margin-bottom: 1rem;
+}
+
+/* Paragraph styles */
+p {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+/* its for the cta (call to action) */
+.cta {
+    width: 100%;
+    height: 60vh;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cta-h2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.cta p {
+    max-width: 50vw;
+    text-align: center;
+    color: rgb(60, 60, 60);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+  /* Media Queries for screens up to 740px */
+  @media screen and (max-width: 740px) {
+    .cta {
+        height: auto;
+        min-height: 50vh;
+        padding: 40px 20px;
+    }
+
+    .cta-h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .cta p {
+        max-width: 90vw;
+        font-size: 16px;
+    }
+}
+
+/* Additional breakpoint for very small screens */
+@media screen and (max-width: 480px) {
+    .cta-h2 {
+        font-size: 24px;
+        margin-left: 70px;
+        margin-right: 50px;
+    }
+
+    .cta p {
+        font-size: 15px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+.text-lg{
+    font-weight: 300;
+      color: #434343;
+    }
+/* its for the footer */
+.footer {
+    background-color: white;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+    color: #333;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+
+    gap: 60px;
+}
+
+.footer-column h4 {
+    font-weight: bold;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #007bff;
+    display: block;
+    margin: 12px 0;
+}
+
+.footer a:hover {
+    color: #0056b3;
+}
+
+.followus {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.followus a {
+    display: flex;
+    align-items: center;
+    width: 30px;
+    justify-content: center;
+    border: 1px solid rgba(255, 0, 0, 0);
+    border-radius: 12px;
+}
+
+.followus a:hover {
+    background-color: #908d8d78;
+}
+
+
+/* Media Queries For Responsiveness */
+@media screen and (max-width: 1200px) {
+    .grid-container {
+        grid-template-columns: 45% 45%;
+        grid-template-rows: auto auto auto;
+    }
+    
+    .hero-section .hero-details .title {
+        margin: -24px 65px;
+    }
+    
+    .hero-section .hero-details .subtitle {
+        margin: 24px 65px;
+    }
+    
+    .hero-section .hero-details .description {
+        margin: 24px 65px;
+    }
+    
+    .hero-section .hero-details .hero-button {
+        margin: 4px 65px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .first, .second, .third, .forth {
+        flex-direction: column;
+        height: auto;
+        padding: 50px 0;
+    }
+    
+    .text h2, .text-second h2, .text-third h2, .text-forth h2 {
+        max-width: 90vw;
+        text-align: center;
+        margin: 20px auto;
+       
+    }
+    
+    .text p, .text-second p, .text-third p, .text-forth p {
+        max-width: 90vw;
+        text-align: center;
+        margin: 20px auto;
+        
+    }
+    
+    .first-sec-img img, .second-sec-img img, .third-sec-img img, .forth-sec-img img {
+        height: auto;
+        max-width: 90%;
+        margin: 20px auto;
+    }
+    
+    .hero-section .section-content {
+        flex-direction: column;
+    }
+  
+   /*.hero-section .hero-details .title, 
+    .hero-section .hero-details .subtitle, 
+    .hero-section .hero-details .description {
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+    }*/
+
+    
+    /*.hero-section .hero-details .hero-button {
+        position: relative;
+        margin: 30px auto;
+        width: 80%;
+    }*/
+    
+    .hero-section .hero-image-wrapper {
+        margin: 0 auto;
+        padding: 0;
+        max-width: 100%;
+    }
+    
+    .hero-section img {
+        margin: 30px auto;
+        max-height: 50vh;
+    }
+    
+    .hero-footer-content h2 {
+        position: relative;
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 140px;
+    }
+    
+    .hero-footer-content p {
+        margin-top: 20px;
+    }
+}
+
+/*newly weds*/
+@media screen and (max-width: 740px) {
+    .hero-section .hero-details .title {
+        font-size: 32px;
+        margin: -12px 20px;
+        text-align: center;
+    }
+    
+    .hero-section .hero-details .subtitle {
+        font-size: 28px;
+        margin: 12px 20px;
+        text-align: center;
+    }
+    
+    .hero-section .hero-details .description {
+        font-size: 16px;
+        margin: 12px 20px;
+        text-align: center;
+    }
+    
+    .hero-section .hero-details .hero-button {
+        position: relative;
+        font-size: 18px;
+        margin: 20px auto;
+        padding: 12px 20px;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .hero-section .hero-details .hero-button .button-get-started {
+        padding: 5px 20px;
+        margin-right: 10px;
+    }
+    
+    .hero-section .hero-details .hero-button .icon {
+        margin-left: -30px;
+    }
+}
+
+
+@media screen and (max-width: 740px) {
+    .hero-section .hero-details .title {
+        font-size: 32px;
+        margin: -12px 20px;
+        text-align: center;
+    }
+    
+    .hero-section .hero-details .subtitle {
+        font-size: 28px;
+        margin: 12px 20px;
+        text-align: center;
+    }
+    
+    .hero-section .hero-details .description {
+        font-size: 16px;
+        margin: 12px 20px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 90%;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-logo {
+        width: 90%;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    .footer-links {
+        width: 90%;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    
+    .footer-copyright {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .cta p {
+        max-width: 90vw;
+    }
+}
+    </style>
+  </head>
+  <body>
+    <header>
+        <div class="header">
+        <span class="mainLogo1">
+            <img src="img/hireC.jpg" alt="HireoCraft" srcset="">
+            <img src="img/logo.jpg" alt="HireoCraft" srcset="">
+        </span>
+        <div class="navbar">
+            <a href="/">Home</a>
+            <a class="option" href="ats-checker">
+                ATS Analysis Free
+
+            </a>
+            <a href="privacy">Privacy Policy</a>
+            <a href="about">About</a>
+        </div>
+        <div class="auth-options">
+
+            <a class="button-signIn" href="/signin">Sign In</a>
+            <button id="menuIcon" class="menuIcon"><i class="fa fa-bars" aria-hidden="true"></i></button>
+        </div>
+    </div>
+    </header>
+    <div id="navbar2" class="navbar2">
+        <a href="/"><i class="fas fa-home"></i> Home</a>
+        <a href="ats-checker"><i class="fas fa-search"></i> ATS Analysis Free</a>
+        <a href="privacy"><i class="fas fa-user-shield"></i> Privacy Policy</a>
+        <a href="about"><i class="fas fa-info-circle"></i> About</a>
+    </div>
+    <main class="Main-body">
+
+        
+
+       <section class="hero-section">
+            <div class="section-content">
+                <div class="hero-details">
+                    <h2 class="title">Free Ai Resume Generator</h2>
+                    <h3 class="subtitle">With ATS Analysis</h3>
+                    <p class="description">
+                        Full-fill your goal with this tool to generate best resume for you with 10+ templates
+                    </p>
+                   <a href="/dashboard"><button class="hero-button">
+                        Get started
+                      
+                    </button></a> 
+                </div>
+                <div class="hero-image-wrapper">
+                    <img alt="A detailed illustration of a resume with various sections and a professional layout" class="hero-image" src="img/hero-img.avif"/>
+                </div>
+            </div>
+        </section>
+
+        <div class="hero-footer-content">
+            <h2>
+                AI model trained on resume writing
+            </h2>
+            <p>
+                Hire craft AI a seamless way to create resumes with professional suggestions tailored to your needs. Its intuitive interface lets you focus on crafting the perfect resume without distractions, helping you move closer to landing your next opportunity.
+            </p>
+        </div>
+        <div class="hero-footer-img">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9Ijg5IiB2aWV3Qm94PSIwIDAgMTIwIDg5IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTE4Ljk2OSAwLjAwMDk3Nzg0NEMxMTkuMjQ0IC0wLjAxNjI4NCAxMTkuNDgyIDAuMTkzMTQyIDExOS40OTkgMC40Njg3NDVDMTE5LjUxNiAwLjc0NDM0NyAxMTkuMzA3IDAuOTgxNzYgMTE5LjAzMSAwLjk5OTAyMkwxMTguOTY5IDAuMDAwOTc3ODQ0Wk03Ny44NTY0IDc3LjI1MzdMNzguMDAyOCA3Ny43MzE4TDc3Ljg1NjQgNzcuMjUzN1pNMCA4NS41TDQuODE5MDEgODIuMzIwM0w1LjE2MzIgODguMDgzNUwwIDg1LjVaTTExOS4wMzEgMC45OTkwMjJDMTE3LjMxNCAxLjEwNjYgMTEzLjUxMyAxLjExMDMzIDExMC4xMTcgMy41OTk0MUMxMDYuNzUzIDYuMDY1MDggMTAzLjY3NiAxMS4wNjY1IDEwMy42NzYgMjEuNDMyOEgxMDIuNjc2QzEwMi42NzYgMTAuODY3IDEwNS44MjIgNS41MDc2OCAxMDkuNTI2IDIuNzkyODVDMTEzLjE5OCAwLjEwMTQyNCAxMTcuMzEgMC4xMDQ4NDQgMTE4Ljk2OSAwLjAwMDk3Nzg0NEwxMTkuMDMxIDAuOTk5MDIyWk0xMDMuNjc2IDIxLjQzMjhDMTAzLjY3NiAzMy40MDk0IDEwMy4wNDUgNDUuNjk0IDk5LjUzMzggNTUuODY5NEM5Ni4wMTM3IDY2LjA3MTUgODkuNTg0NyA3NC4xODU0IDc4LjAwMjggNzcuNzMxOEw3Ny43MSA3Ni43NzU3Qzg4LjkxNTMgNzMuMzQ0NSA5NS4xNDU5IDY1LjUyMDggOTguNTg4NSA1NS41NDMzQzEwMi4wNCA0NS41MzkxIDEwMi42NzYgMzMuNDAyIDEwMi42NzYgMjEuNDMyOEgxMDMuNjc2Wk03OC4wMDI4IDc3LjczMThDNjIuOTM4IDgyLjM0NDggNTEuNjgyNiA3OC4xNzM0IDQ0LjIwNTEgNzEuNjEzNEM0MC40NzUzIDY4LjM0MTIgMzcuNjkwOSA2NC40ODAzIDM1LjgzNzYgNjAuODMyOEMzMy45ODkyIDU3LjE5NSAzMy4wNDc5IDUzLjczMDggMzMuMDQ3OSA1MS4yNDYzSDM0LjA0NzlDMzQuMDQ3OSA1My41MTkyIDM0LjkyMjcgNTYuODI0NSAzNi43MjkxIDYwLjM3OTlDMzguNTMwNyA2My45MjU2IDQxLjIzOTggNjcuNjgxNyA0NC44NjQ2IDcwLjg2MTdDNTIuMDk2NiA3Ny4yMDY0IDYyLjk5NTQgODEuMjgxMyA3Ny43MSA3Ni43NzU3TDc4LjAwMjggNzcuNzMxOFpNMzMuMDQ3OSA1MS4yNDYzQzMzLjA0NzkgNDYuMjUwNyAzNi4yMTk1IDQyLjg4NDUgMzkuOTk2MSA0MS45NTkzQzQzLjc4MDIgNDEuMDMyMyA0OC4xMzE1IDQyLjU2NDggNTAuNDUyNyA0Ny4yMTcxTDQ5LjU1NzkgNDcuNjYzNUM0Ny40NDgzIDQzLjQzNTIgNDMuNTcwOCA0Mi4xMTMyIDQwLjIzNCA0Mi45MzA2QzM2Ljg4OTUgNDMuNzQ5OSAzNC4wNDc5IDQ2LjcyNjkgMzQuMDQ3OSA1MS4yNDYzSDMzLjA0NzlaTTUwLjQ1MjcgNDcuMjE3MUM1Mi43MTAxIDUxLjc0MTQgNTEuOTQ3IDYwLjU0ODIgNDUuMzA0MiA2OC41OTczQzM4LjYzNjYgNzYuNjc2MyAyNi4wNDU1IDg0LjAxODcgNC41MzEyIDg1LjczMDJMNC40NTE5IDg0LjczMzNDMjUuNzcyNyA4My4wMzczIDM4LjA4MTEgNzUuNzc4MyA0NC41MzI5IDY3Ljk2MDdDNTEuMDA5NSA2MC4xMTMxIDUxLjU4NTggNTEuNzI4IDQ5LjU1NzkgNDcuNjYzNUw1MC40NTI3IDQ3LjIxNzFaIiBmaWxsPSJibGFjayIvPgo8L3N2Zz4K" alt="Feature Keywords" />
+        </div>
+    </section>
+      
+        
+      <section class="first">
+        <div class="text">
+          <h2>Tailor your resume for the job description</h2>
+          <p>The AI-driven ATS scan extracts essential keywords from job descriptions to enhance your resume's
+            visibility to recruiters. Use this tool to customize your resume effectively, increasing your chances of
+            securing interviews, no matter how recruiters utilize the ATS.</p>
+        </div>
+        <div class="first-sec-img">
+          <img src="img/bhai.gif" alt="Feature Keywords" />
+        </div>
+      </section>
+
+      <section class="second">
+        <div class="second-sec-img">
+          <img src="img/bhai4.gif" alt="Feature Writing" />
+        </div>
+        <div class="text-second">
+          <h2>Focus on the significance of your experience</h2>
+          <p>Beyond spelling and grammar corrections, the hirecraft assistant enhances your resume by rephrasing
+            bullet points to emphasize your accomplishments and demonstrate your impact.</p>
+        </div>
+      </section>
+
+      <section class="third">
+        <div class="text-third">
+          <h2>Make your resume with one click using our AI</h2>
+          <p>Beyond spelling and grammar corrections, the hirecraft assistant enhances your resume by rephrasing
+            bullet points to emphasize your accomplishments and demonstrate your impact. Simply paste the job
+            description, and with one click, your resume summary, experience, skills, and achievements will be
+            tailored to match the role, incorporating relevant keywords and skills you might have overlooked.</p>
+        </div>
+        <div class="third-sec-img">
+          <img src="img/bhai3.gif" alt="Feature Tailored" />
+        </div>
+      </section>
+
+      <section class="forth">
+        <div class="forth-sec-img">
+          <img src="img/bhai2.gif" alt="Feature Strengths" />
+        </div>
+        <div class="text-forth">
+          <h2>Can highlight your strengths</h2>
+          <p>Showcase what makes you unique and stand out from other candidates. Our AI resume builder provides
+            specific, impactful suggestions to help you present your strengths confidently.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="heading">
+           
+          </div>
+          <div class="container mx-auto px-4 py-12">
+        <h1 class="text-4xl font-extrabold text-center mb-12 text-gray-900">Make your move with a stand-out resume template</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="card">
+                <i class="fas fa-pencil-alt icon"></i>
+                <p class="text-lg font-medium">Choose from our professionally designed templates, fully customizable to fit your needs.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-download icon"></i>
+                <p class="text-lg font-medium">Downloadable in PDF and TXT formats, each template is available in both a4 and letter size</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-arrows-alt icon"></i>
+                <p class="text-lg font-medium">Adjust margins, spacing, font-size, and also line height</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-palette icon"></i>
+                <p class="text-lg font-medium">Enjoy truly unlimited color options</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-book icon"></i>
+                <p class="text-lg font-medium">Templates are visually appealing and optimized for readability</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-award icon"></i>
+                <p class="text-lg font-medium">Start with your favourite design and our resume builder help to craft a standout application.</p>
+            </div>
+        </div>
+        </div>
+      </section>
+
+  
+    </main>
+
+    <footer><div class="footer">
+        <div class="footer-links">
+            <div class="footer-column">
+                <span class="mainLogo">
+                    <img src="img/hireC.jpg" alt="HireoCraft" srcset="">
+                    <img src="img/logo.jpg" alt="HireoCraft" srcset="">
+                </span>
+            </div>
+            <div class="footer-column">
+                <h4>AI Tools</h4>
+                <a href="/dashboard">Create Resume</a>
+                <a href="ats-checker">ATS Analysis</a>
+                
+            </div>
+            <div class="footer-column">
+                <h4>Information</h4>
+                <a href="/">Home</a>
+                <a href="about">About</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <a href="terms">Terms of Service</a>
+                <a href="privacy">Privacy Policy</a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=webncommunity@gmail.com&su=Write%20your%20queries&body=">Contact Us</a>
+
+            </div>
+            <div class="footer-column">
+                <h4>Follow Us</h4>
+                <span class="followus"><a href="http://"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            width="24" height="24" color="#000000" fill="none">
+                            <path
+                                d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                            <path
+                                d="M16.9265 8.02637H13.9816C12.9378 8.02637 12.0894 8.86847 12.0817 9.91229L11.9964 21.4268M10.082 14.0017H14.8847"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg></a>
+                    <a href="http://"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                            height="24" color="#000000" fill="none">
+                            <path
+                                d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                            <path
+                                d="M16.5 12C16.5 14.4853 14.4853 16.5 12 16.5C9.51472 16.5 7.5 14.4853 7.5 12C7.5 9.51472 9.51472 7.5 12 7.5C14.4853 7.5 16.5 9.51472 16.5 12Z"
+                                stroke="currentColor" stroke-width="1.5" />
+                            <path d="M17.5078 6.5L17.4988 6.5" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></a>
+                    <a href="http://">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                            color="#000000" fill="none">
+                            <path
+                                d="M2 18.5C3.76504 19.521 5.81428 20 8 20C14.4808 20 19.7617 14.8625 19.9922 8.43797L22 4.5L18.6458 5C17.9407 4.37764 17.0144 4 16 4C13.4276 4 11.5007 6.51734 12.1209 8.98003C8.56784 9.20927 5.34867 7.0213 3.48693 4.10523C2.25147 8.30185 3.39629 13.3561 6.5 16.4705C6.5 17.647 3.5 18.3488 2 18.5Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a href="http://"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                            height="24" color="#000000" fill="none">
+                            <path
+                                d="M12 20.5C13.8097 20.5 15.5451 20.3212 17.1534 19.9934C19.1623 19.5839 20.1668 19.3791 21.0834 18.2006C22 17.0221 22 15.6693 22 12.9635V11.0365C22 8.33073 22 6.97787 21.0834 5.79937C20.1668 4.62088 19.1623 4.41613 17.1534 4.00662C15.5451 3.67877 13.8097 3.5 12 3.5C10.1903 3.5 8.45489 3.67877 6.84656 4.00662C4.83766 4.41613 3.83321 4.62088 2.9166 5.79937C2 6.97787 2 8.33073 2 11.0365V12.9635C2 15.6693 2 17.0221 2.9166 18.2006C3.83321 19.3791 4.83766 19.5839 6.84656 19.9934C8.45489 20.3212 10.1903 20.5 12 20.5Z"
+                                stroke="currentColor" stroke-width="1.5" />
+                            <path
+                                d="M15.9621 12.3129C15.8137 12.9187 15.0241 13.3538 13.4449 14.2241C11.7272 15.1705 10.8684 15.6438 10.1728 15.4615C9.9372 15.3997 9.7202 15.2911 9.53799 15.1438C9 14.7089 9 13.8059 9 12C9 10.1941 9 9.29112 9.53799 8.85618C9.7202 8.70886 9.9372 8.60029 10.1728 8.53854C10.8684 8.35621 11.7272 8.82945 13.4449 9.77593C15.0241 10.6462 15.8137 11.0813 15.9621 11.6871C16.0126 11.8933 16.0126 12.1067 15.9621 12.3129Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                        </svg></a></span>
+                <a href="http://">support@hirecraft.com</a>
+            </div>
+        </div>
+        <p>&copy; 2025 FREE AI Resume Generator. All rights reserved.</p>
+    </div>
+    </footer>
+
+    <script>
+      // Mobile menu functionality
+      const menuIcon = document.getElementById('menuIcon');
+      const navbar2 = document.getElementById('navbar2');
+      
+      menuIcon.addEventListener('click', () => {
+        const currentDisplay = navbar2.style.display;
+        navbar2.style.display = currentDisplay === 'none' || currentDisplay === '' ? 'flex' : 'none';
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', (event) => {
+        if (navbar2 && menuIcon && 
+            !navbar2.contains(event.target) && 
+            !menuIcon.contains(event.target)) {
+          navbar2.style.display = 'none';
+        }
+      });
+    </script>
+  </body>
+</html>

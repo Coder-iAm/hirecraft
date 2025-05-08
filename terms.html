@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hirecraft Terms and Conditions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+
+            /* Ensure full height */
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+        }
+
+        /* Stylish Webkit scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+            /* Width of the scrollbar */
+            height: 10px;
+            /* Height of the scrollbar for horizontal scrolling */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #007bff;
+            /* Color of the scrollbar thumb */
+            border-radius: 10px;
+            /* Rounded corners for the scrollbar thumb */
+            border: 3px solid #f9f9f9;
+            /* Border around the scrollbar thumb */
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+            /* Background color of the track */
+            border-radius: 10px;
+            /* Rounded corners for the track */
+        }
+
+        ::-webkit-scrollbar-button {
+            display: none;
+            /* Hide the buttons (up/down or left/right) on the scrollbar */
+        }
+
+        ::-webkit-scrollbar-corner {
+            background-color: #f9f9f9;
+
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+        }
+
+
+
+        .mainLogo1 img {
+            border-radius: 12px;
+            padding-top: 12px;
+            height: 25px;
+        }
+
+        .mainLogo img {
+            border-radius: 12px;
+            padding-top: 12px;
+            height: 25px;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar a {
+            padding: 9px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            border: 1px solid rgba(255, 0, 0, 0);
+            border-radius: 12px;
+        }
+
+        .navbar a:hover {
+            background-color: #d4d4d47b;
+        }
+
+        .navbar2 {
+            height: 170px;
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 120px;
+            width: 190px;
+            border: 2px solid rgba(224, 223, 223, 0.356);
+            border-radius: 12px;
+            justify-content: center;
+            align-items: flex-start;
+            background-color: white;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            transition: 0.3s ease;
+        }
+
+        .navbar2 a {
+            padding: 9px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            border: 1px solid rgba(255, 0, 0, 0);
+            border-radius: 12px;
+        }
+
+        .navbar2 a:hover {
+            background-color: #d4d4d47b;
+        }
+
+        .menuIcon {
+            display: none;
+            background-color: white;
+            border: none;
+        }
+
+        .auth-options {
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-content {
+            text-align: center;
+            margin: 40px 20px;
+        }
+
+        .header-content h1 {
+            font-size: 32px;
+            margin: 0;
+        }
+
+        .header-content p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .option {
+            border: none;
+            background: #ffffff;
+            color: #007bff;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .button,
+        .profile,
+        .google {
+            padding: 12px 25px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.2s ease-in-out;
+
+        }
+
+        .button {
+            color: #ffffff;
+            background: linear-gradient(to right, rgb(29, 142, 235), rgb(11, 11, 161));
+            border: none;
+            text-decoration: none;
+        }
+
+        .button:hover,
+        .profile:hover,
+        .google:hover {
+            transform: translateY(3px);
+        }
+
+        .profile {
+            background-color: rgba(197, 197, 197, 0.119);
+            color: rgb(27, 27, 27);
+            border: none;
+            border: 2px solid rgb(81, 81, 81);
+        }
+
+        .profile:hover {
+            background-color: #4248bc;
+            color: #ffffff;
+        }
+
+        .google {
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+
+        .google:hover {
+            background-color: #0056b3;
+        }
+
+        .Main-body {
+            height: auto;
+
+        }
+
+        .footer {
+            background-color: white;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            text-align: center;
+            color: #333;
+
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+
+            gap: 60px;
+        }
+
+        .footer-column h4 {
+            font-weight: bold;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #007bff;
+            display: block;
+            margin: 12px 0;
+        }
+
+        .footer a:hover {
+            color: #0056b3;
+        }
+
+        .followus {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .followus a {
+            display: flex;
+            align-items: center;
+            width: 30px;
+            justify-content: center;
+            border: 1px solid rgba(255, 0, 0, 0);
+            border-radius: 12px;
+        }
+
+        .followus a:hover {
+            background-color: #908d8d78;
+        }
+
+        @media (max-width: 430px) {
+            .header {
+
+                align-items: center;
+                padding: 10px;
+            }
+
+            .navbar {
+                align-items: center;
+                gap: 10px;
+            }
+
+            .header-content h1 {
+                font-size: 18px;
+            }
+
+            .header-content p {
+                font-size: 14px;
+            }
+
+            .button,
+            .profile,
+            .google {
+                font-size: 13px;
+                padding: 9px 18px;
+            }
+
+            .footer {
+                flex-direction: column;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .header-content h1 {
+                font-size: 16px;
+            }
+
+            .header-content p {
+                font-size: 13px;
+            }
+
+            .button,
+            .profile,
+            .google {
+                font-size: 12px;
+                padding: 7px 14px;
+            }
+        }
+
+        @media (min-width: 1366px) and (max-width: 1920px) {
+            .header {
+                padding: 25px;
+            }
+
+            .header-content h1 {
+                font-size: 40px;
+            }
+
+            .header-content p {
+                font-size: 22px;
+            }
+
+            .button,
+            .profile,
+            .google {
+                font-size: 18px;
+                padding: 15px 30px;
+            }
+        }
+
+        @media (max-width: 967px) {
+            .navbar {
+                display: none;
+            }
+
+            .menuIcon {
+                display: block;
+            }
+
+            .footer-links {
+                flex-direction: column;
+            }
+
+            .footer-links {
+
+                gap: 30px;
+            }
+            .mainLogo1 img {
+    border-radius: 12px;
+    padding-top: 12px;
+    height: 18px;
+}
+
+.mainLogo img {
+    border-radius: 12px;
+    padding-top: 12px;
+    height: 18px;
+}
+
+        }
+
+       /*div profile*/
+       .profile-menu {
+    margin: 0;
+    position: absolute;
+    top: 50px;
+    right: 12px;
+    background: white;
+    width: 260px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 15px;
+    display: none;
+    z-index: 10;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
+.profile-menu.active {
+    display: block;
+}
+
+.profile-menu h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #222;
+    text-align: center;
+    font-weight: bold;
+}
+
+.profile-menu p {
+    font-size: 14px;
+    color: #444;
+    margin-top: 8px;
+    padding: 5px 10px;
+    background: #f5f5f5;
+    border-radius: 5px;
+    word-wrap: break-word;    /* Break long words */
+  overflow-wrap: break-word;
+  white-space: normal;      /* Allows text to wrap */
+  max-width: 100%;  
+}
+
+.profile-menu p strong {
+    color: #0073e6;
+}
+
+.logout-btn {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background: red;
+    color: white;
+    border-radius: 6px;
+    margin-top: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.logout-btn:hover {
+    background: darkred;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 600px) {
+    .profile-menu {
+        width: 220px;
+        
+    }
+    .profile-menu h4 {
+        font-size: 16px;
+    }
+    .profile-menu p {
+        font-size: 13px;
+    }
+}
+.profile2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.profile2 img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+
+    .profile2 img {
+        width: 30px;
+        height: 30px;
+    }
+}
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .terms-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px 20px;
+    background-color: #fdfdfd;
+    color: #2c2c2c;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+    border-radius: 12px;
+}
+
+.terms-section h1 {
+    font-size: 2.4rem;
+    text-align: center;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+}
+
+.terms-section h2 {
+    font-size: 1.4rem;
+    margin-top: 25px;
+    color: #333;
+}
+
+.terms-section p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 10px 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .terms-section {
+        padding: 30px 15px;
+    }
+
+    .terms-section h1 {
+        font-size: 2rem;
+    }
+
+    .terms-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .terms-section p {
+        font-size: 0.95rem;
+    }
+}
+
+
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <span class="mainLogo1">
+                <img src="img/hireC.jpg" alt="HireoCraft" srcset="">
+                <img src="img/logo.jpg" alt="HireoCraft" srcset="">
+            </span>
+            <div class="navbar">
+                <a href="/">Home</a>
+                <a class="option" href="ats-checker">
+                    ATS Analysis Free
+
+                </a>
+                <a href="privacy">Privacy Policy</a>
+                <a href="about">About</a>
+            </div>
+            <div class="auth-options">
+                <button class="profile" onclick="profileInfo(event)">Profile</button>
+                <a class="button" href="signout">Sign Out</a>
+                <button id="menuIcon" class="menuIcon"><i class="fa fa-bars" aria-hidden="true"></i></button>
+            </div>
+        </div>
+
+    </header>
+
+    <div id="navbar2" class="navbar2">
+        <a href="/"><i class="fas fa-home"></i> Home</a>
+        <a href="ats-checker"><i class="fas fa-search"></i> ATS Analysis Free</a>
+        <a href="privacy"><i class="fas fa-user-shield"></i> Privacy Policy</a>
+        <a href="about"><i class="fas fa-info-circle"></i> About</a>
+    </div>
+
+    <div class="profile-menu" id="profileDropdown">
+   
+    </div>
+
+    <section class="terms-section">
+        <h1>Terms and Conditions</h1>
+    
+        <h2>1. Acceptance of Terms</h2>
+        <p>
+            By accessing or using Hirecraft, you agree to comply with and be bound by these Terms and Conditions. If you do not agree, please do not use our services.
+        </p>
+    
+        <h2>2. Use of Service</h2>
+        <p>
+            Hirecraft provides an AI-powered resume and cover letter builder intended for personal and non-commercial use. You agree to use the platform responsibly and not for any unlawful purpose.
+        </p>
+    
+        <h2>3. Account Responsibility</h2>
+        <p>
+            You are responsible for maintaining the confidentiality of your account credentials. Hirecraft is not liable for any loss or damage resulting from unauthorized use of your account.
+        </p>
+    
+        <h2>4. Data Usage & Privacy</h2>
+        <p>
+            We collect personal information to enhance your experience. By using our service, you consent to the collection and use of your data as outlined in our Privacy Policy.
+        </p>
+    
+        <h2>5. Intellectual Property</h2>
+        <p>
+            All content, templates, logos, and branding on Hirecraft are the property of our team. You may not reproduce, distribute, or modify any part of the platform without written permission.
+        </p>
+    
+        <h2>6. Limitation of Liability</h2>
+        <p>
+            Hirecraft is not responsible for job outcomes or decisions made based on resume content generated on our site. Users are advised to review and customize documents before submitting them to employers.
+        </p>
+    
+        <h2>7. Modifications</h2>
+        <p>
+            We reserve the right to update these Terms at any time. Continued use of the service after changes implies acceptance of the revised terms.
+        </p>
+    
+        <h2>8. Termination</h2>
+        <p>
+            We may suspend or terminate your access to the service if we believe you have violated any of these Terms and Conditions.
+        </p>
+    
+        <h2>9. Contact Us</h2>
+        <p>
+            For any questions regarding these terms, please contact us at: support@hirecraft.com
+        </p>
+    </section>
+    
+
+
+    <footer>
+        <div class="footer">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <span class="mainLogo">
+                        <img src="img/hireC.jpg" alt="HireoCraft" srcset="">
+                        <img src="img/logo.jpg" alt="HireoCraft" srcset="">
+                    </span>
+                </div>
+                <div class="footer-column">
+                    <h4>AI Tools</h4>
+                    <a href="dashboard">Create Resume</a>
+                    <a href="ats-checker">ATS Analysis</a>
+                   
+                </div>
+                <div class="footer-column">
+                    <h4>Information</h4>
+                    <a href="/">Home</a>
+                    <a href="about">About</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="terms">Terms of Service</a>
+                    <a href="privacy">Privacy Policy</a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=webncommunity@gmail.com&su=Write%20your%20queries&body=">Contact Us</a>
+
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <span class="followus"><a href="http://"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                width="24" height="24" color="#000000" fill="none">
+                                <path
+                                    d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                                <path
+                                    d="M16.9265 8.02637H13.9816C12.9378 8.02637 12.0894 8.86847 12.0817 9.91229L11.9964 21.4268M10.082 14.0017H14.8847"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg></a>
+                        <a href="http://"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                height="24" color="#000000" fill="none">
+                                <path
+                                    d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                                <path
+                                    d="M16.5 12C16.5 14.4853 14.4853 16.5 12 16.5C9.51472 16.5 7.5 14.4853 7.5 12C7.5 9.51472 9.51472 7.5 12 7.5C14.4853 7.5 16.5 9.51472 16.5 12Z"
+                                    stroke="currentColor" stroke-width="1.5" />
+                                <path d="M17.5078 6.5L17.4988 6.5" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg></a>
+                        <a href="http://">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                                color="#000000" fill="none">
+                                <path
+                                    d="M2 18.5C3.76504 19.521 5.81428 20 8 20C14.4808 20 19.7617 14.8625 19.9922 8.43797L22 4.5L18.6458 5C17.9407 4.37764 17.0144 4 16 4C13.4276 4 11.5007 6.51734 12.1209 8.98003C8.56784 9.20927 5.34867 7.0213 3.48693 4.10523C2.25147 8.30185 3.39629 13.3561 6.5 16.4705C6.5 17.647 3.5 18.3488 2 18.5Z"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <a href="http://"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                height="24" color="#000000" fill="none">
+                                <path
+                                    d="M12 20.5C13.8097 20.5 15.5451 20.3212 17.1534 19.9934C19.1623 19.5839 20.1668 19.3791 21.0834 18.2006C22 17.0221 22 15.6693 22 12.9635V11.0365C22 8.33073 22 6.97787 21.0834 5.79937C20.1668 4.62088 19.1623 4.41613 17.1534 4.00662C15.5451 3.67877 13.8097 3.5 12 3.5C10.1903 3.5 8.45489 3.67877 6.84656 4.00662C4.83766 4.41613 3.83321 4.62088 2.9166 5.79937C2 6.97787 2 8.33073 2 11.0365V12.9635C2 15.6693 2 17.0221 2.9166 18.2006C3.83321 19.3791 4.83766 19.5839 6.84656 19.9934C8.45489 20.3212 10.1903 20.5 12 20.5Z"
+                                    stroke="currentColor" stroke-width="1.5" />
+                                <path
+                                    d="M15.9621 12.3129C15.8137 12.9187 15.0241 13.3538 13.4449 14.2241C11.7272 15.1705 10.8684 15.6438 10.1728 15.4615C9.9372 15.3997 9.7202 15.2911 9.53799 15.1438C9 14.7089 9 13.8059 9 12C9 10.1941 9 9.29112 9.53799 8.85618C9.7202 8.70886 9.9372 8.60029 10.1728 8.53854C10.8684 8.35621 11.7272 8.82945 13.4449 9.77593C15.0241 10.6462 15.8137 11.0813 15.9621 11.6871C16.0126 11.8933 16.0126 12.1067 15.9621 12.3129Z"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                            </svg></a></span>
+                    <a href="http://">support@hirecraft.com</a>
+                </div>
+            </div>
+            <p>&copy; 2025 FREE AI Resume Generator. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+
+    <script>
+
+
+function submitResume() {
+    const input = document.getElementById("resumeInput");
+    const file = input.files[0];
+
+    if (!file) {
+        alert("Please select a file first.");
+        return;
+    }
+const aireview=document.getElementById("ai-writting2");
+aireview.style.display="flex";
+    const formData = new FormData();
+    formData.append("resume", file);  // 'resume' must match multer's field name
+
+    fetch("/check-ats", {
+        method: "POST",
+        body: formData,
+    })
+    .then(res => res.json())
+    .then(data => {
+        if(data.success){
+            aireview.style.display="none";
+   const atsdiv=document.getElementById("resumeATS");
+   atsdiv.style.display="block";
+     const scoreget=parseInt(data.score);
+
+if(scoreget>90){
+   atsdiv.innerHTML=` <div class="circle" style="border-top-color: #00b8a9;
+            border-right-color: #00b8a9;
+            border-left-color: #00b8a9;
+            border-bottom-color: #00b8a9;">${data.score}</div>
+            <div class="label">RESUME STRENGTH</div>
+            <div class="title">Let me explain it!</div>
+            <div class="text">${data.text}</div>`
+
+}
+else if(scoreget>60){
+   atsdiv.innerHTML=` <div class="circle" style="border-top-color: #00b8a9;
+            border-right-color: #00b8a9;
+            border-bottom-color: #00b8a9;">${data.score}</div>
+            <div class="label">RESUME STRENGTH</div>
+            <div class="title">Let me explain it!</div>
+            <div class="text">${data.text}</div>`
+
+}
+else if(scoreget>40){
+   atsdiv.innerHTML=` <div class="circle" style="border-top-color: #00b8a9;
+            border-right-color: #00b8a9;
+            ">${data.score}</div>
+            <div class="label">RESUME STRENGTH</div>
+            <div class="title">Let me explain it!</div>
+            <div class="text">${data.text}</div>`
+
+}else{
+    atsdiv.innerHTML=` <div class="circle" style="border-top-color: #00b8a9;
+            
+            ">${data.score}</div>
+            <div class="label">RESUME STRENGTH</div>
+            <div class="title">Let me explain it!</div>
+            <div class="text">${data.text}</div>`
+}
+
+        }
+        else{
+            aireview.style.display="none";
+            alert("server error");
+        }
+    })
+    .catch(err => {
+        aireview.style.display="none";
+        
+        alert("Error uploading file.");
+    });
+}
+
+
+
+
+
+
+
+
+
+
+function profileInfo(event) {
+    event.stopPropagation();
+    const dropdown = document.getElementById("profileDropdown");
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+}
+
+
+document.addEventListener("click", () => {
+    document.getElementById("profileDropdown").style.display = "none";
+});
+
+
+document.getElementById("profileDropdown").addEventListener("click", (e) => {
+    e.stopPropagation();
+});
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+    fetch("/user-list")
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                const user = data.user; // ✅ Fix this
+
+                const adminprofile = document.getElementById("profileDropdown");
+                adminprofile.innerHTML = `
+                    <div class="profile2">
+                        <img src="img/default-person.jpg" alt="Admin">
+                    </div>
+                    <p><strong>Name:</strong> ${user.name}</p>
+                    <p><strong>Email:</strong> ${user.email}</p>
+                    <a href="signout" class="logout-btn">Log Out</a>`;
+            }
+        })
+        .catch(error => {
+            alert("Server error!");
+            console.error(error);
+        });
+});
+
+
+
+
+
+
+
+
+const navbar = document.getElementById("navbar2");
+const menuIcon = document.getElementById("menuIcon");
+
+// Initially hide navbar
+navbar.style.right = "-200px";
+navbar.style.display = "none";
+
+// Toggle navbar on menu icon click
+menuIcon.addEventListener("click", function (event) {
+    event.stopPropagation(); // Prevent click from bubbling up to document
+    if (navbar.style.right === "-200px") {
+        navbar.style.right = "10px";
+        navbar.style.display = "flex";
+    } else {
+        navbar.style.right = "-200px";
+        navbar.style.display = "none";
+    }
+});
+
+// Hide navbar if clicked anywhere else on the document
+document.addEventListener("click", function (event) {
+    // If the click is outside both the navbar and the menuIcon
+    if (!navbar.contains(event.target) && !menuIcon.contains(event.target)) {
+        navbar.style.right = "-200px";
+        navbar.style.display = "none";
+    }
+});
+
+    </script>
+</body>
+
+</html>

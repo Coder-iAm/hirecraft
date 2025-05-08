@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume - Professional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #2e2e2e;
+            font-size: 16px;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar {
+            width: 30%;
+            background: #1f2937;
+            color: #fff;
+            padding: 32px 20px;
+        }
+
+        .profile {
+            text-align: center;
+        }
+
+        .profile img {
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 16px;
+            border: 3px solid #3b82f6;
+        }
+
+        .profile h1 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .profile p {
+            font-size: 14px;
+            margin: 4px 0;
+            color: #fdfdfd;
+        }
+
+        .section-title {
+            font-size: 14px;
+            margin-top: 24px;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-bottom: 1px solid #3b82f6;
+            padding-bottom: 6px;
+        }
+        .section-title2 {
+            font-size: 14px;
+            margin-top: 24px;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-bottom: 1px solid #3b82f6;
+            padding-bottom: 6px;
+        }
+        .sidebar p {
+            font-size: 14px;
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+
+        .content {
+            height: auto;
+            width: 70%;
+            padding: 32px;
+        }
+        strong{
+            color: #ffffff;
+        }
+
+        .section {
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            color: #1f2937;
+            margin-bottom: 12px;
+        }
+        .section-title2 {
+            font-size: 18px;
+            color: #f1f1f1;
+            margin-bottom: 12px;
+        }
+        .skills {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: #3b82f6;
+            border-radius: 4px;
+            margin: 5px;
+        }
+
+        .bar-container {
+            background: #d1d5db;
+            height: 8px;
+            width: 100%;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile">
+                <img src="uploads/profile.jpg" alt="Profile Picture" />
+                <h1>{{name}}</h1>
+                <p>{{email}}</p>
+                <p>{{phone}}</p>
+            </div>
+            <div class="section-title2">Personal Info</div>
+            <p><strong>DOB:</strong> {{date-of-birth}}</p>
+            <p><strong>Address:</strong> {{address}}</p>
+            <p><strong>Languages:</strong> {{languages}}</p>
+
+            <div class="section-title2">Interests</div>
+            <p>{{hobbies}}</p>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Career Objective</h2>
+                <p>{{profile}}</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                {{education}}
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Work Experience</h2>
+                {{experience}}
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Projects</h2>
+                {{academic-projects}}
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Certifications</h2>
+                {{achievements}}
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills">{{skills}}</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

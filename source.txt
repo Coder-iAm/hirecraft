@@ -1,0 +1,2 @@
+phi
+gemma:2b

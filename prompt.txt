@@ -1,0 +1,9 @@
+
+    const chatInput = `Rewrite the following as a professional resume work experience entry, expanding it with more formal and descriptive language without changing original facts, no personal pronouns, formal tone, use bullet points or commas: '${newedu}'`;
+
+
+    const chatInput = `Only Rewrite the following as a resume summary. Remove all personal pronouns and greetings. Keep it formal, professional, and within *130 words must. Do not change facts.Text: '${profile}'`;
+
+
+    const chatInput = `Now give an ATS score (0 - 100)* must and mention writing the mistakes of resume.Keep it within *30 Words* must::'${singleLineText}'`;
+
