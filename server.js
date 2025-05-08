@@ -4,7 +4,7 @@ const app = express();
 const path = require('path');
 const session = require("express-session");
 const fetch = require('node-fetch');
-require('dotenv').config({ path: path.join(__dirname, '.env.local') });
+require('dotenv').config();
 const mysql = require('mysql2');
 const multer = require("multer");
 const puppeteer = require("puppeteer");
